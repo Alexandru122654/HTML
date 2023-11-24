@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="temestyle.css">
+	<title>
+	</title>
+</head>
+<body class="fade-in-element">
+<h1><u>Blucuri de text</u></h1>
+<p>
+Aceste etichete nu se referă la particularitățile caracterelor ce compun textul, ci la funcțiile pe care le poate avea un bloc de text în cadrul paginii Web.<br>
+Toate aceste etichete produc automat trecerea la un rând nou și adaugarea unui spațiu suplimentar.
+</p>
+<h3><u>Inserarea unei adrese</u></h3>
+<p>
+Dacă într-o pagină web trebuie inclusă o adresă ,atunci putem utiliza facilitățile oferite de o etichetă dedicată: &ltaddress&gt...&lt/address&gt.
+</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title> Adresa</title>
+</head>
+<body>
+Locuiesc pe strada:<address> Cuza-Vodă 3/2<br>
+Chișinău, Moldova
+</body>
+</html>
+</xmp>
+</div>
+<h3><u>Identarea unui bloc</u></h3>
+<p>
+Pentru ca un bloc de text să fie indentat ( marginea din stânga textului să fie deplasată la dreapta la o anumită distanță față de marginea paginii ), acesta trebuie inclus între etichetele<b> &ltblockquote&gt</b>...<b>&lt/blockquote&gt</b>.
+</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title> Indentarea unui bloc</title>
+</head>
+<body>
+Textul ce urmeaza este indentat:<blockquote> Aceste etichete nu se referă la particularitățile caracterelor ce compun textul, ci la funcțiile pe care le poate avea un bloc de text în 
+cadrul paginii Web. Toate aceste etichete produc automat trecerea la un rand nou și adăugarea unui spațiu suplimentar. </blockquote>
+</body>
+</html>
+</xmp>
+</div>
+<h3><u>Blocul preformatat</u></h3>
+<p>
+Într-un bloc <b>&ltpre&gt</b>...<b>&lt/pre&gt</b>, semnificația marcajelor HTML se păstrează. <br>
+Blocul <b>&ltpre&gt</b>...<b>&lt/pre&gt</b> este indicat pentru a insera randuri vide ( spațiu între rândurile succesive ).<br>
+Caracterul " spațiu " poate fi luat în considerare de browser dacă este inserat explicit prin & nbsp;.
+</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title> Bloc preformatat</title>
+</head>
+<body>
+Orar:
+<pre>
+Ora/Ziua    Luni        Marti           Miercuri 
+ 
+8:00        Româna      Matematică      Sport
+9:00        Geografie   Istorie         Fizică
+</pre>
+</body>
+</html>
+</xmp>
+</div>
+<p>
+Într-un fișier HTML, caracterele "<" şi ">" au o semnificație specială pentru browser.<br>
+Ele încadrează comenzile și atributele de afișare a elementelor într-o pagină.<br>
+Dacă dorim ca un fragment de text să conțină astfel de caractere, acest fragment trebuie încadrat de una dintre perechile de etichete: </p>
+<ul>
+<li><b>&ltxmp&gt</b>...<b>&lt/xmp&gt</b> ( 80 de caractere pe rând );</li>
+<li><b>&ltlisting&gt</b>...<b>&lt/listing&gt</b> ( 120 de caractere pe rând ).</li> </ul>
+<p>
+Aceste marcaje interpretează corect caracterele " spațiu ", " etichetă "şi "CR/LF ". Textul afișat în pagina este monospațiat.
+</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title> xmp și listing</title>
+</head>
+<body>
+Un fișier html standard arată astfel:
+<xmp>
+<html>
+<head>
+<title> </title>
+</head>
+<body>
+O pagina Web ...
+</body>
+</html></xmp>
+&lt/xmp&gt<xmp>
+</body>
+</html>
+</xmp>
+</div>
+<h3><u>Blocuri paragraf</u></h3>
+<p>
+Cu ajutorul etichetei paragraf <b>&ltp&gt</b> este posibil trecerea la o linie noua și permite:
+<ul>
+<li>inserarea unui spațiu suplimentar înainte de blocul paragraf;</li>
+<li>inserarea unui spațiu suplimentar după blocul paragraf, Dacă se folosește delimitatorul &lt/p&gt (acesta fiind opțional);</li>
+<li>alinierea textului cu ajutorul atributului align, având valorile posibile " left ", " center " sau " right ".</li></ul>
+</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title> Blocuri paragraf</title>
+</head>
+<body>
+Prima linie 
+<p> Linie generată de un paragraf (implicit paragraful este aliniat la stânga).</p>
+<p align="right"> Paragraf aliniat la dreapta.Paragraf aliniat la dreapta.Paragraf aliniat la dreapta.Paragraf aliniat la dreapta. Paragraf aliniat la dreapta.</p>
+<p align="center"> Paragraf aliniat în centru.Paragraf aliniat în centru.Paragraf aliniat în centru.Paragraf aliniat în centru. Paragraf aliniat în centru.</p>
+</body>
+</html>
+</xmp>
+</div>
+<h3><u>Blocuri de titlu</u></h3>
+<p>
+Într-un text titlurile ( headers ) de capitole pot fi introduse cu ajutorul etichetelor &lth1&gt. &lth2&gt, &lth3&gt, &lth4&gt, &lth5&gt, &lth6&gt.<br> 
+Toate aceste etichete se referă la un bloc de text și trebuie insoțite de o etichetă de încheiere similară. <br>
+Aceste etichete acceptă atributul align pentru alinierea titlului blocului de text la stanga (în mod prestabilit ) , în centru și la dreapta. Tag-ul &lth1&gt permite scrierea unui titlu cu caractere mai mari și aldine, pe când &lth6&gt folosește caracterele cele mai mici.
+</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title> Blocuri de titlu</title>
+</head>
+<body>
+<h1 align="center"> Titlu de marime 1 aliniat în centru </h1> 
+<h2 align="right"> Titlu de marime 2 aliniat la dreapta. </h2> 
+<h4> Titlu de marime 4 aliniat la stanga (implicit) </h4> 
+</body>
+</html>
+</xmp>
+</div>
+<h3><u>Linii orizontale</u></h3>
+<p>
+Într-o pagina Web pot fi inserate linii orizontale. Acest lucru se face cu ajutorul etichetei &lthr&gt. Pentru a configura o linie orizontală se utilizează următorele atribute ale etichetei &lthr&gt:</p>
+<ul>
+<li> align - permite alinierea liniei pe orizontală. Valorile posibile sunt " left " ," center " și " right "; </li>
+<li> width - permite alegerea lungimii liniei;</li>
+<li> size - permite alegerea grosimii liniei;</li>
+<li> noshade - când este prezent definește o linie fără umbră;</li>
+<li> color - permite definirea culorii liniei.</li>
+</ul>
+<h3><u>Blocuri &ltcenter&gt</u></h3>
+<p>
+Blocul introdus de etichetele &ltcenter&gt...&lt/center&gt aliniază centrat toate elementele pe care le contine.
+</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title> Linii orizontale</title>
+</head>
+<body>
+<center> <hr width=10%> <hr width=40%> <hr width=70%><hr width=100%> <hr width=70%> <hr width=40%> <hr width=10%> </center>
+</body>
+</html>
+</xmp>
+</div>
+<h3><u>Blocuri &ltnobr&gt</u></h3>
+<p>Blocul de text cuprins între etichetele &ltnobr&gt...&lt/nobr&gt va fi afișat pe o singură linie.</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title> Blocul <nobr></title>
+</head>
+<body>
+<nobr> O singură linie.O singură linie.O singură linie.O singură linie.O singură linie. O singură linie.O singură linie.O singură linie.O singură linie.O singură linie
+</body>
+</html>
+</xmp>
+</div>
+<h3><u>Blocuri &ltdiv&gt</u></h3>
+<p>
+Modalitatea cea mai eficientă de delimitare și de formatare a unui bloc de text este folosirea delimitatorilor &ltdiv&gt...&lt/div&gt. Un parametru foarte foarte util pentru stabilirea caracteristicilor unui bloc &ltdiv&gt ( diviziune ) este align ( aliniere ). <br>
+Valorile posibile ale acestui parametru sunt:</p>
+<ul>
+<li>left " ( aliniere la stânga );</li>
+<li>center " ( aliniere centrală );</li>
+<li>right " ( aliniere la dreapta ).</li>
+</ul>
+<p>
+Un bloc &ltdiv&gt...&lt/div&gt poate include alte subblocuri. în acest caz , alinierea precizată de atributul align al blocului are efect asupra tuturor subblocurilor incluse în blocul &ltdiv&gt; 
+Un bloc &ltdiv&gt...&lt/div&gt admite atributul " nowrap " care interzice întreruperea rândurilor de către browser.
+</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title> Blocul <div></title>
+</head>
+<body>
+Aceasta linie este o linie normală.Următorul bloc este aliniat la dreapta.
+<div align="right">
+O singură linie.O singură linie.O singură linie.O singură linie.<br>
+O singură linie.O singură linie.O singură linie.O singură linie.<br>
+O singură linie.O singură linie.O singură linie.O singură linie.<br>
+</div>
+<div align="center">
+Bloc aliniat pe centru.Bloc aliniat pe centru.<br>
+Bloc aliniat pe centru.Bloc aliniat pe centru.<br>
+Bloc aliniat pe centru.Bloc aliniat pe centru.<br>
+</div>
+</body>
+</html>
+</xmp>
+</div>
+<hr>
+<h2>Aceasta a fost cursul online bazat pe blocurile de text în HTML. Pentru a te întoarce la pagina cu celelalte teme apasă pe butonul de mai jos.</h2>
+<a href="teme.html" class="back-home-button">Înapoi la pagina cu teme</a>
+</div>
+</body>
+</html>

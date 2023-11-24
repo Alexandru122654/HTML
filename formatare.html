@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="temestyle.css">
+	<title>Formatarea caracterelor</title>
+</head>
+<body>
+<h1><u>Formatarea caracterelor</u></h1>
+<p>
+Un font este caracterizat de următoarele atribute:</p></ul>
+<li>culoare (stabilită prin atributul color);</li>
+<li>tipul sau stilul (stabilit prin atributul face);</li>
+<li>mărimea (definită prin atributul size);</li>
+<li>mărimea în puncte tipografice (stabilită prin atributul point-size);</li>
+<li>grosime (definită prin atributul weight).</li>
+</ul><p>
+Toate aceste atribute aparțin etichetei &ltfont&gt, care permite inserarea de blocuri de texte personalizate.
+</p>
+<h3><u>Culori</u></h3>
+<p>
+O culoare poate fi precizată în două moduri:</p>
+<ul>
+<li>printr-un nume de culoare.</li>
+<li>printr-o constantă conform standardului de culoare RGB (Red, Green, Blue).</li></ul>
+<p>O astfel de constantă se formează astfel: #rrggbb, unde r, g și b sunt cifre hexazecimale.
+</p>
+<h3><u>Culoarea fontului</u></h3>
+<p>
+Pentru a scrie un fragment de text cu caractere de o anumită culoare se incadrează acest fragment între delimitatorii &ltfont&gt...&lt/font&gt având stabilit atributul color la valoarea necesară.<br> De exemplu:<br>
+&ltfont color=red&gtfragment de text de culoare roșie&lt/font&gt
+</p>
+<h3><u>Familia fontului</u></h3>
+<p>
+Pentru a scrie un text într-o pagină pot fi folosite mai multe fonturi (stiluri de caractere). Există cinci familii generice de fonturi care sunt de regulă disponibile pe toate calculatoarele utilizatorilor: serif, sans serif, cursive, monospace și fantasy.<br>
+Tipul de font necesar poate fi stabilit prin atributul face al etichetei &ltfont&gt.<br>
+Pot fi introduse mai multe fonturi separate prin virgulă.<br>
+<b>&ltfont face = " Arial, serif, monospace "&gt</b><br>
+În acest caz browser-ul va utiliza primul font pe care îl cunoaște.
+</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title> Culoarea și familia fontului</title>
+</head>
+<body>
+Aceste linie este scrisă cu caractere normale.<br>
+<font color="red">Aceasta linie este roșie.</font><br>
+Aici<font color="green">fiecare</font>
+<font color="blue">cuvant</font>
+<font color="yellow">are<</font>
+<font color="cyan">alta</font>
+<font color="#3478fa">culoare.</font><br>
+<font face="monospace">Linie scrisă cu caractere  monospațiate.</font><br>
+<font  face="arial">Linie scrisă cu caractere arial.</font>
+</body>
+</html>
+</xmp>
+</div>
+<h3><u>Mărimea fontului</u></h3>
+<p>
+Pentru a stabili mărimea unui font se utilizează atributul size al etichetei &ltfont&gt.<br>
+Valorile acestui atribut pot fi:</p>
+<ul>
+<li>1, 2, 3, 4, 5, 6, 7 ( 1 pentru cel mai mic font și 7 pentru cel mai mare);</li>
+<li>+1, +2, etc. pentru a mări dimensiunea fontului cu 1, 2, etc. față de valoarea curentă;</li>
+<li>-1, -2, etc. pentru a micșora dimensiunea fontului cu 1, 2, etc. fata de valoarea curenta.</li></ul><p>
+Mărimea unui font poate fi stabilită exact cu ajutorul atributului point-size.<br>
+Valorile acceptate de acest atribut pot fi orice numere naturale pozitive.<br>
+Numărul astfel precizat reprezintă mărimea fontului în puncte tipografice.<br>
+Acest atribut funcționează numai cu Netscape Communicator.
+</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title> Mărimea fontului</title>
+</head>
+<body>
+Aceste linie este scrisă cu caractere normale. <br>
+<font  size="5">Fonturi de mărime 5.</font><br>
+<basefont  size="4">Fonturi de mărime 4.</font><br>
+<font  size="-3">Fonturi de mărime 1.</font><br>
+<font  size="+2">Fonturi de mărime 6.</font><br>
+<font  point-size="30">Fonturi de mărime 30 pt (numai cu  Netcape Communicator).</font><br>
+<font  point-size="50">Fonturi de mărime 50 pt (numai cu  Netcape Communicator).</font>
+</body>
+</html>
+</xmp>
+</div>
+<hr>
+<h2>Aceasta a fost cursul online bazat pe Formatarea caracterelor in HTML. Pentru a te întoarce la pagina cu celelalte teme apasă pe butonul de mai jos.</h2>
+<a href="teme.html" class="back-home-button">Înapoi la pagina cu teme</a>
+</body>
+</html>

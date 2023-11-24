@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="temestyle.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Harti de imagini</title>
+</head>
+<body>
+<h1><u>Harti de imagini</u></h1>
+<p>
+Hartile de imagini sunt parti din aceeasi imagine care este "impartita" in mai multe zone, apoi in functie de zona pe care se executa click, browserul poate afisea o alta pagina.<br>
+De exemplu, pe un site dedicat turismului am putea avea pe pagina principala o imagine care reprezinta harta tarii (in care definim zonele dupa conturul raioanelor);<br>
+In cazul unui click pe zona Soroca se incarca o pagina care descrie diverse obiective turistice din raionul Soroca, iar un click pe o alta zona de raion ar duce la alta pagina care descrie obiectivele turistice din acel raion.<br>
+O harta de imagini ar putea fi folosita si pentru navigarea in cadrul unui site: daca avem mai multe butoane de navigare grupate, se poate  folosi o imagine care reprezinta toate acele butoane - mai multe imagini se incarca mai incet decat o imagine cu dimensiunea egala cu suma celorlalte (in kb) deoarece comunicarea cu serverul (cand se cere imaginea) se face o singura data.<br>
+Pana aici am prezentat numai avantaje; dezavantajul major este ca un vizitator care are browserul setat sa nu incarce imagini pentru a naviga mai repede nu va vedea imaginea si nu va intelege mai nimic (putem totusi folosi marcajul "alt" de specificare a textului alternativ pentru imagini).<br>
+Totusi acest lucru este foarte rar.
+</p>
+<h3><u>Crearea hartii de imagini</u></h3>
+<p>
+Pentru formarea unei harti de imagini, se adauga in interiorul tag-ului "&ltimg&gt" atributul usemap a carui valoare reprezinta numele hartii, apoi se incepe formarea hartii prin elementul:<br>
+&ltmap name="nume_harta"&gt&lt/map&gt
+</p>
+<ul>
+<li>unde pt. "nume_harta" a atributului "name" se foloseste acelasi cuvant adaugat la "usemap"</li>
+<li>in cadrul acestuia se adauga elemente</li>
+</ul>
+   <p>
+&ltarea atribute&gt
+</p>
+<ul>
+<li>acestea definesc zonele hartii imaginii si forma acestora (prin valorile atributelor),</li>
+<li>numarul de elemente "AREA" reprezinta numarul de suprafete (cu link-uri specifice) in care este "impartita" imaginea.</li>
+</ul>
+<p>
+In urmatorul exemplu puteti vedea forma generala a creari unei "harti de imagini" (cu 2 cadre), URL poate fi orice adresa de site sau pagina a site-ului curent:
+</p>
+<div class="code-container">
+	<xmp>
+<img src="poza.jpg" usemap="#map1">
+<map name="map1">
+  <area shape="rect" coords="9, 120, 56, 149" href="url">
+  <area shape="rect" coords="100, 200, 156, 249" href="url">
+</map>
+	</xmp>
+</div>
+<p>
+In tabelul de mai jos puteti vedea atributele care se folosesc si descrierea acestora:
+</p>
+<div align="middle" style="color: white;">
+<table border="1" cellspacing="0">
+	<tr>
+		<td width="110" rowspan="4">
+			&ltimg atribute&gt
+		</td>
+		<td align="middle"> - </td>
+		<td width="500">Marcaj de includere a imaginilor</td>
+	</tr>
+	<tr>
+		<td>ismap</td>
+		<td>Specifica faptul ca este o harta de imagine pe server(foloseste mai rar; de obicei folosim harti de imagine la client</td>
+	</tr>
+	<tr>
+		<td>usemap="nume_harta"</td>
+		<td>Specifica harta de imagine la client</td>
+	</tr>
+	<tr>
+		<td>lowscr = "url</td>
+		<td>Imaginea de rezolutie scazuta care se incarca prima(doar pentru Netscape)</td>
+	</tr>
+	<tr>
+		<td rowspan="2">&ltmap atribute&gt&lt/map&gt</td>
+		<td align="middle"> - </td>
+		<td>Specifica regiunele unei harti de imagine la client</td>
+	</tr>
+	<tr>
+		<td>name = "nume_harta"</td>
+		<td>Numele hartii de imagine (corespunzator atributului USEMAP al marcajului &ltimg&gt)</td>
+	</tr>
+	<tr>
+		<td rowspan="5">&ltarea atribute&gt</td>
+		<td align="middle"> - </td>
+		<td>Defineste o regiune a unei harti de imagine</td>
+	</tr>
+	<tr>
+		<td>shape = "forma"</td>
+		<td>Forma regiunii: rect sau rectangle(dreptunghi), circle sau circ(cerc), point(punct), poly sau polygon(poligon)</td>
+	</tr>
+	<tr>
+		<td align="middle">coords = "coordonate"</td>
+		<td>Coordonatele unei regiuni (in pixeli); se calculeaza in functie de coltul din stanga sus al imaginii (care are coordonatele (0, 0), adica x = 0, y = 0); variaza in functie de SHAPE = forma regiunii:
+- pentru rect (dreptunghi) se dau coordonatele celor 4 colturi sau a celor din stg. sus si dr. jos ale regiunii
+- pentru circ (cerc) se dau coordonatele centrului cercului si raza
+- pentru point (punct) se dau coordonatele punctului
+- pentru poly (poligon) se dau coordonatele colturilor poligonului</td>
+	</tr>
+	<tr>
+		<td>href = "=url="</td>
+		<td>URL-ul asociat regiunii specificare din cadrul iaginii; in cazul unui clic pe acea regiune se incarca pagina specificata prin URL.</td>
+	</tr>
+	<tr>
+		<td>alt = "text"</td>
+		<td>Textul asociat regiunii specificate din carul imaginii; apare plasand mouse-ul deasupra regiunii respective sau celor cu browserul setat sa nu incarca imagini</td>
+	</tr>
+</table>
+</div>
+<hr>
+<h2>Aceasta a fost cursul online bazat pe Hartile de imagini in HTML. Pentru a te întoarce la pagina cu celelalte teme apasă pe butonul de mai jos.</h2>
+<a href="teme.html" class="back-home-button">Înapoi la pagina cu teme</a>
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="temestyle.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Operarea cu formulare. Marcaje utilizate.</title>
+</head>
+<body>
+<p>
+Un formular este un ansamblu de zone active alcatuit din butoane ,casete de selecție,câmpuri de editare etc. <br>
+Formularele va asigura construirea unori pagini Web care permit utilizatorilor să introducă efectiv informații și să le transmită serverului.<br>
+Formularele pot varia de la o simplă casetă de text, pentru introducerea unui șir de caractere pe post de cheie de cautare - element caracteristic tuturor motoarelor de căutare din Web - până la o structură complexă ,cu multiple secțiuni, care oferă facilități puternice de transmisie a datelor.<br>
+O sesiune cu o pagină web ce conține un formular cuprinde următoarele etape:
+</p>
+<ul>
+    <li>Utilizatorul completează formularul și il expediează unui server;</li>
+    <li>O aplicație dedicată de pe server analizează formularul completat și (dacă este necesar) stochează datele într-o bază de date;</li>
+    <li>Dacă este necesar serverul expediează un raspuns utilizatorului.</li>
+</ul>
+<p>
+Un formular este definit intr-un bloc delimitat de etichetele corespondente <b>&ltform&gt</b> şi <b>&lt/form&gt</b>.
+</p>
+<h3><u>Atribute esentiale ale elementului &ltform&gt</u></h3>
+<p>
+Există două atribute esențiale ale elementului &ltform&gt:
+</p>
+<br>
+<ol>
+<li>Atributul action precizează ce se va intampla cu datele formularului odată ce acestea ajung la destinație.<br>
+	De regulă ,valoarea atributului action este adresa URL a unui script aflat pe un srver WWW care primește datele formularului, efectuează o prelucrare a lor și expediează către utilizator un răspuns.</li>
+<ul>
+<li>&ltform action="http://www.yahoo.com/cgi-bin/nume_fis.cgi"&gt</li>.
+</ul>
+<p>
+	Script-urile pot fi scrise în limbajele Perl, C, PHP, Unix shell.
+</p>
+<li>Atributul method precizează metoda utilizată de browser pentru expedierea datelor formularului.<br>
+Sunt posibile următoarele valori:</li>
+<ul>
+<li>get (valoarea implicită). în acest caz, datele din formular sunt adăugate la adresa URL precizată de atributul action;</li>
+<li>nu sunt permise cantități mari de date (maxim 1 Kb);</li>
+<li>intre adresa URL și date este inserat un "?".</li>
+</ul>
+</ol>
+<p>
+Datele sunt adăugate conform sintaxei: nume_camp = valoare_camp. Între diferite seturi de date este introdus un "&".<br>
+Exemplu: "<b>http://www.yahoo.com/cgi-bin/nume_fis.cgi?nume1 = valoare1&nume2 = valoare2"</b>;<br>
+Post în acest caz datele sunt expediate separat.<br>
+Sunt permise cantități mari de date (ordinul MB)<br>
+Pentru ca un formular să fie funcțional, trebuie precizat ce se va intâmpla cu el după completarea și expediere.<br>
+Cel mai simplu mod de utilizare a unui formular este expedierea acestuia prin poșta electronică (e-mail).<br>
+Pentru aceasta se folosește un atribut al etichetei &ltform&gt:<br>
+și anume action care primește ca valoare " mailto: " concatenat cu o adresă validă de e-mail către care se va expedia formularul completat.
+</p>
+<h3><u>Un formular cu un camp de editare si un buton de expediere</u></h3>
+<p>
+Majoritatea elementelor unui formular sunt definite cu ajutorul etichetei &ltinput&gt.<br>
+Pentru a preciza tipul elementului se folosește atributul type al etichetei &ltinput&gt.<br>
+Pentru un câmp de editare, acest atribut primeste valoarea "text".<br>
+Alte atribute pentru un element &ltinput&gt sunt:
+</p>
+<ul>
+<li>name - permite atașarea unui nume fiecărui element al formularului;</li>
+<li>value - care permite atribuirea unei valori inițiale unui element al formularului.</li>
+</ul>
+<p>
+Un buton de expediere al unui formular se introduce cu ajutorul etichetei &ltinput&gt, în care atributul type este configurat la valoarea "submit".<br>
+Acest element poate primi un nume prin atributul name.<br>
+Pe buton apare scris "Submit Query" sau valoarea atributului value, dacă această valoare a fost stabilită.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Form_ex1</title>
+</head>
+<body>
+<h1>Un formular cu un camp de editare și un buton de expediere</h1>
+<hr>
+<form action="mailto:xxxxx@xxx.com" method="post">
+Numele:<input  type="text" name="numele" value="Numele și prenumele"><br />
+<input type="submit" value="Expedieaza">
+</form>
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+Pentru elementul <b>&ltinput&gt</b> de tipul câmp de editare (type = "text") , alte doua atribute pot fi utile:
+</p>
+<ul>
+<li>size - specifică lățimea câmpului de editare ce depășește această lățâme ,atunci se execută automat o derulare acestui câmp;</li>
+<li>maxlength - specifică numărul maxim de caractere pe care le poate primi un câmp de editare, caracterele tastate peste numărul maxim sunt ignorate.</li>
+</ul>
+<h3><u>Observatii</u></h3>
+<ul>
+<li>dacă atributul type lipsește intr-un element &ltinput&gt, atunci câmpul respectiv este considerat în mod prestabilit ca fiind de tip <b>"text"</b>;</li>
+<li>formularele cu un singur câmp (de tip text) nu au nevoie de un buton de expediere, datele sunt expediate automat dupa completarea și apăsarea tastei ENTER.</li>
+</ul>
+<h3><u>Butonul RESET</u></h3>
+<p>
+Dacă un element de tip &ltinput&gt are atributul type configurat la valoarea <b>"reset"</b>, atunci în formular se introduce un buton pe care scrie "Reset".<br>
+La apăsarea acestui buton, toate elementele din formular primesc valorile prestabilite (definită odata cu formularul ), chiar dacă aceste valori au fost modificate de utilizator.<br>
+Un buton Reset poate primi un nume cu ajutorul atributului name și o valoare printr-un atribut value.<br>
+Un asemenea buton afișează textul "Reset" dacă atributul value lipsește, respectiv valoarea acestui atribut în caz contar.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Form_ex2</title>
+</head>
+<body>
+<h1>Un formular cu un buton reset</h1><br />
+<hr> <br />
+<form action="mailto:xxxxx@xxx.com" method="post"> <br />
+Introduceti numele:<input type="text" name="nume" value="Numele"><br /> <br />
+Introduceti prenumele:<input type="text" name="prenume" value="Prenumele"><br /><br />
+<input  type="reset" value="Sterge"> <input type="submit" value="Expedieaza"> <br />
+</form>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Camp de editare de tip "password"</u></h3>
+<p>
+Dacă se utilizează eticheta &ltinput&gt având atributul type configurat la valoarea <b>"password"</b> , atunci în formular se introduce un element asemănător cu un câmp de editare obișnuit introdus prin type="text".<br>
+Toate atributele unui câmp de editare rămân valabile.<br>
+Singura deosebire constă în faptul că acest câmp de editare nu afișează caracterele clar, ci numai caractere *, care ascund de privirile altui utilizator aflat în apropiere valoarea introdusă intr-un asemenea câmp.<br>
+La expedierea formularului insă, valoarea tastată intr-un câmp de tip "password" se transmite clar.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Form_ex3</title>
+</head>
+<body>
+<h1>Un formular cu un buton reset</h1>
+<hr> <br />
+<form action="mailto:xxxxx@xxx.com" method="post">
+Nume:<input type="text" name="nume"  value="Numele"><br>
+Prenume:<input type="text" name="prenume" value="Prenumele"><br>
+Password:<input type="password" name="parola" ><br>
+<input  type="reset" value="Sterge"> <input type="submit" value="Expedieaza">
+</form>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Butoane radio</u></h3>
+<p>
+Butoanele radio permit alegerea, la un moment dat, a unei singure variante din mai multe posibile.<br>
+Butoanele radio se introduc prin eticheta &ltinput&gt cu atributul <b>type</b> având valoarea "radio".
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Form_ex4</title>
+</head>
+<body>
+<h1>Un formular cu butoane radio</h1>
+<hr>
+<form action="mailto:xxxxx@xxx.com" method="post">
+<p>
+Alegeti sexul:<br>
+Barbatesc: <input type="radio" name="sex"  value="b"> <br />
+Femeiesc: <input  type="radio" name="sex" value="f"> <br />
+<input type="reset"> <input type="submit">
+</p>
+</form>
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+La expedierea formularului se va transmite una dintre perechile "sex=b" sau "sex=f", în funcție de alegerea făcută de utilizator.
+</p>
+<h3><u>Casete de validare</u></h3>
+<p>
+O casetă de validare(checkbox) permite selectarea sau deselctarea unei opțiuni.<br>
+Pentru inserarea unei casete de validare se utilizează eticheta &ltinput&gt cu atributul <b>type</b> configurat la valoarea "checkbox".
+</p>
+<h3><u>Observatii</u></h3>
+<ul>
+<li>fiecare casetă poate avea un nume definit prin atributul <b>name</b>.</li>
+<li>fiecare casetă poate avea valoarea prestabilită selectat definită prin atributul <b>checked</b>.</li>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Form_ex5</title>
+</head>
+<body>
+<h1>Un formular cu casete checkbox</h1>
+<hr>
+<form action="mailto:xxxxx@xxx.com" method="post">
+Alegeti meniul:<br />
+<input type="checkbox" name="pizza" value="o portie"> Pizza<br />
+<input type="checkbox" name="nectar"  value="un pahar"> Nectar<br />
+<input type="checkbox" name="bere" value="o sticla"> Bere<br />
+<input type="checkbox" name="cafea" value="o ceasca"> Cafea<br />
+<input type="reset"> <input type="submit">
+</form>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Casete de fisiere</u></h3>
+<p>
+Într-o pereche <b>"name = value"</b> a unui formular se poate folosi intregul conținut al unui fișier pe post de valoare.<br>
+Pentru aceasta se inserează un element &ltinput&gt intr-un formular, cu atributul <b>type</b> având valoarea "file"(fișier).<br>
+Atributele pentru un element de tip casetă de fișiere:
+</p>
+<ul>
+<li>name - permite atașarea unui nume;</li>
+<li>value - primește ca valoare adresa URL a fișierului care va fi expediat o dată cu formularul.<br>
+	Această valoare poate fi atribuită direct atributului value, sau poate fi selectată prin intermediul unei casete de tip File Upload sau Choose File care apare la apăsarea butonului Browse... din formular;</li>
+<li>enctype - precizează metoda utilizată la criptarea fișierului de expediat.Valoarea acestui atribut este "multipart/form-data".</li>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Form_ex6</title>
+</head>
+<body>
+<h1>Un formular cu caseta de fisiere</h1>
+<hr>
+<form action="mailto:xxxxx@xxx.com" method="post">
+Alegeti fisierul:<input type="file" name="fisier" enctype="multipart/form-data"><br />
+<input type="reset"> <input type="submit">
+</form>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Liste de selectie</u></h3>
+<p>
+O listă de selecție permite utilizatorului să aleagă unul sau mai multe elemente dintr-o listă finită.<br>
+Lista de selecție este inclusă în formular cu ajutorul etichetelor corespondente &ltselect&gt și &lt/select&gt.<br>
+O listă de selecție poate avea următoarele atribute:
+</p>
+<ul>
+<li>name - atașează listei un nume (utilizat în perechile "name=value" expediat serverului);</li>
+<li>size - care precizează(printr-un număr intreg pozitiv, valoarea prestabilită fiind 1) câte elemente din listă sunt vizibile la un moment dat pe ecran(celelalte devenind vizibile prin acționarea barei de derulare atașate automat listei).</li>
+</ul>
+<p>
+Elementele unei liste de selecție sunt incluse în lista cu ajutorul etichetei &ltoption&gt.<br>
+Două atribute ale etichetei &ltoption&gt se dovedesc utile:
+</p>
+<ul>
+<li>value - primește ca valore un text care va fi expediat server-ului în perechea <b>"name=value"</b>, dacă acest atribut lipsește, atunci către server va fi expediat textul ce urmează după &ltoption&gt;&lt/option&gt
+<li>selected(fara alte valori) - permite selectarea prestabilită a unui element al listei.</li>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Form_ex7</title>
+</head>
+<body>
+<h1>Un formular cu o lista de selectie</h1>
+<hr>
+<form action="mailto:xxxxx@xxx.com" method="post">
+Universitatea absolvita:<br><br>
+<select name="universitate" size="3">
+  <option value="USM">Universitatea de Stat din Moldova
+  <option value="UST" selected>Universitatea de Stat din Tiraspol
+  <option value="UTM">Universitatea Tehnica din Moldova
+  <option value="UCCM">Universitatea Cooperatist Comerciala din Moldova
+</select>
+<br><br>
+<input type="reset"> <input type="submit">
+</form>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Lista de selectie cu selectii multiple</u></h3>
+<p>
+O listă de selecție ce permite selecții multiple se creează intocmai ca o listă de selecție obisnuită.<br>
+In plus, eticheta &ltselect&gt are un atribut multiple(fară alte valori).<br>
+Când formularul este expediat către server pentru fiecare element selectat al listei care este se inserează către o pereche "name=value" unde name este numele listei.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Form_ex8</title>
+</head>
+<body>
+<h1>Un formular cu o lista de selectie ce accepta selectii multiple</h1>
+<hr>
+<form action="mailto:xxxxx@xxx.com" method="post">
+Limbi straine cunoscute:<br><br>
+<select name="limbi straine" size="5" multiple >
+  <option  value="e"> Engleza
+  <option value="f" selected>Franceza
+  <option value="s">Spaniola
+  <option value="i">Italiana
+  <option value="r">Rusa
+  <option value="g">Germana
+</select><br><br>
+<input type="reset"> <input type="submit">
+</form>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Campuri de editare multilinie</u></h3>
+<p>
+Intr-un formular câmpuri de editare multilinie pot fi incluse cu ajutorul etichetei <b>&lttextarea&gt</b>.<br>
+Eticheta are următoarele atribute:
+</p>
+<ul>
+<li>cols - specifică numărul de caractere afișate într-o linie;</li>
+<li>rows - specifică numărul de linii afișate simultan;</li>
+<li>name - permite atașarea unui nume câmpului de editare multilinie;</li>
+<li>wrap - determină comportamentul câmpului de editare față de sfârșitul de linie. Acest atribut poate primi urmatoarele valori:
+	<ul type="square">
+		<li>"off" - intreruperea cuvintelor se produce la marginea dreaptă a editorului, când dorește utilizatorul. Caracterul de sfârșit de linie este inclus în textul transmis serverului o data cu formularul;</li>
+     	<li>"hard" - intreruperea cuvintelor se produce la marginea dreaptă a editorului. Caracterul de sfârșit de linie este inclus în textul transmis serverului o dată cu formularul;</li>
+     	<li>"soft" - intreruperea cuvintelor se produce la marginea dreaptă a editorului. Nu se include caracterul de sfârșit de linie în textul transmis serverului o dată cu formularul.</li>
+	</ul></li>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Form_ex9</title>
+</head>
+<body>
+<h1>Un formular cu un camp de editare multilinie</h1>
+<hr>
+<form action="mailto:xxxxx@xxx.com" method="post">
+<textarea name="text multilinie" cols="30" rows="5"  wrap="off">
+Prima linie din textul initial.
+A doua linie din textul initial.
+</textarea><br /><br />
+<input type="reset"> <input type="submit">
+</form>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Un forular complex</u></h3>
+<p>
+În exemplul următor este prezentat un formular conținând elemente prezentate anterior.<br>
+Câmpurile formularului sunt incluse în celulele unui tabel pentru a obține o aliniere dorită.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Form_ex10</title>
+</head>
+<body>
+<h1>Un formular complex</h1>
+<hr>
+<center>
+<table bgcolor="orange"> <form action="mailto:xxxxx@xxx.com" method="post">
+<caption align="top">MENIU</caption>
+<tr align="left"><th>Numele: <td><input type="text" name="numele">
+<tr align="left"><th>Preumele: <td><input type="text" name="prenumele">
+<tr align="left"><th>Telefonul: <td><input type="text" name="telefonul">
+<tr align="left"><th>Alegeti pizza:
+<td>
+<input type="checkbox" name="ciuperci">cu ciuperci
+<input type="checkbox" name="mexicana">mexicana
+<input type="checkbox" name="europeana">europeana
+<tr align="left"><th>Alegeti plata:
+<td bgcolor="lightblue">
+   <ul>
+     <li><input type="radio" name="plata">cash
+     <li><input type="radio" name="plata">card
+   </ul>
+<tr align="left"><th>Comentarii:
+<td>
+<textarea name="comentarii" cols="30" rows="5" wrap="off">
+Inserati aici aprecierile dumneavoastra legate de calitatea serviciilor noastre
+</textarea>
+<tr align="left" valign="top">
+<td>
+<input type="reset" value="Sterge"><td><input type="submit" value="Expedieaza">
+</form>
+</table>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Butoane</u></h3>
+<p>
+Într-un formular pot fi afișate butoane.<br>
+Când utilizatorul apasă un buton, se lansează în execuție o funcție de tratare a acestui eveniment.<br>
+Limbajul HTML nu permite scrierea unor astfel de funcții (acest lucru este posibil dacă se utilizează limbajele Javascript sau Java).<br>
+Pentru a insera un buton intr-un formular, se utilizează eticheta &ltinput&gt având atributul type configurat la valoarea "button".<br>
+Alte două atribute ale elementului &ltinput&gt sunt:
+</p>
+<ul>
+<li>name - permite atașarea unui nume butonului;</li>
+<li>value -primește ca valoare textul ce va fi afișat pe buton.</li>
+<p>
+Un buton pentru lansarea în execuție a unei acțiuni poate fi introdus intr-un formular prin elementul &ltinput&gt având atributul <b>type</b> configurat la valoarea "button", așa cum s-a văzut mai inainte.<br>
+Există o a doua modalitate de a introduce într-o pagina Web un buton, și anume prin intermediul blocului &ltbutton&gt...&lt/button&gt.<br>
+Un astfel de buton poate fi inserat intr-un formular, în acest caz declanșând acțiuni legate de acel formular, sau poate fi introdus oriunde în pagină pentru inițierea unor acțiuni independente de formulare.<br>
+Atributele posibile ale elementului "button" sunt:
+</p>
+<li>name - acordă elementului un nume;</li>
+<li>value - precizează textul care va fi afișat pe buton;</li>
+<li>type - precizează acțiunea ce se va executa la apăsarea butonului dacă acesta este inclus într-un formular.<br>
+Valorile posibile pentru acest atribut sunt: "button/submit/reset".</li>
+</ul>
+<p>
+În corpul blocului &ltbutton&gt...&lt/button&gt se poate afla un text sau un marcaj de inserare a unei imagini.
+</p>
+<h3><u>Observatii finale</u></h3>
+<ul>
+<li>elementul &ltform&gt poate avea un atribut target, care primește ca valoare numele unei ferestre a browserului în care va fi incărcat răspunsul trimis serverului WWW la expedierea unui formular.</form>
+<li>toate elementele cuprinse intr-un formular pot avea un atribut disabled care permite dezactivarea respectivului element.</li>
+<li>toate elementele de tip text cuprinse într-un formular pot avea un atribut readonly care interzice modificarea conținutului acestor elemente.</li>
+</ul>
+<hr>
+<h2>Aceasta a fost cursul online bazat pe Operarea cu formulare in HTML. Pentru a te întoarce la pagina cu celelalte teme apasă pe butonul de mai jos.</h2>
+<a href="teme.html" class="back-home-button">Înapoi la pagina cu teme</a>
+</body>
+</html>

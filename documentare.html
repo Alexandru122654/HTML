@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="temestyle.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Documentarea unei pagini WEB</title>
+</head>
+<body>
+<h1><u>Documentarea unei pagini WEB</u></h1>
+<p>
+Meta-informațiile sunt informațiile despre „modul de organizare a informațiilor”.<br>
+In cazul unei pagini Web meta-informațiile vor furniza date despre modul în care a fost creată această pagină.<br>
+Meta-informațiile nu sunt vizibile într-o pagină Web.<br>
+Ele sunt conținute în fișierul sursă „.html” și sunt utilizate de serverele Web aflate în INTERNET, specializate în stocarea de „informații despre informațiile” stocate pe diferite site-uri.<br>
+Meta-informațiile sunt culese de către aplicațiile speciale ale motoarelor de căutare numite spiders sau robots.<br>
+Serverele specializate în stocarea și indexarea de meta-informații oferă utilizatorilor motoare de căutare puternice care permit regăsirea informațiilor (a adreselor la care aceste informații există).<br>
+Câteva exemple în acest sens sunt: <b>www.google.com, www.yahoo.com, www.altavista.com, www.excite.com, www.lycos.com</b> etc.
+
+Meta-informațiile adică informațiile despre informațiile conținute într-o pagină Web se introduc cu ajutorul tag-ului &ltmeta&gt plasat în interiorul blocului &lthead&gt…&lthead&gt. Acest tag se utilizează cel mai frecvent impreună cu trei atribute:
+</p>
+<ul>
+   <li><b>name;</b></li>
+   <li><b>http-equiv;</b></li>
+   <li><b>content.</b></li>
+</ul>
+<p>
+Cele trei atribute se folosesc în perechi <b>"name content"</b> sau <b>"http-equiv content"</b>.
+</p>
+<h3><u>Descrierea unei pagini WEB</u></h3>
+<p>
+Pentru a face cunoscut motoarelor de căutare din Internet scopul pentru care a fost creată o pagină Web poate fi inserat un element &ltmeta&gt având atributele:
+</p>
+<ul>
+   <li>name - setat la valoarea description;</li>
+   <li>content - setat la un șir de caractere ce conține o descriere generală a paginii.</li>
+</ul>
+<p>
+Iată în continuare un exemplu de utilizare:
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Centrul de Excelență în Informatică </title>
+<meta name="description" content="Site-ul prezintă informații despre Centrul de Excelență în Informatică">
+</head>
+<body>
+… … …
+<body>
+</html>
+	</xmp>
+</div>
+<h3><u>Cuvintele cheie pentru o pagina WEB</u></h3>
+<p>
+Cuvintele cheie oferă o altă metodă de descriere a informațiilor conținute de o pagină Web.<br>
+Cuvintele cheie trebuie alese cu atenție pentru ca informația indexată pe baza lor de către spiders, să poată fi regăsită corect în bazele de date ale mooarelor de căutare.<br>
+Pentru a preciza cuvintele cheie ale paginii Web se utilizează atributele:
+</p>
+<ul>
+   <li>name - setat la valoarea keywords;</li>
+   <li>content - care va primi ca valoare lista cuvintelor cheie separate prin ",".</li>
+</ul>
+<p>
+Iată un exemplu de utilizare:
+   <b>&ltmeta name="keywords" content="Centrul de Excelență în Informatică, Informatica, Chișinău, Moldova"&gt</b>
+</p>
+<h3><u>Drepturile de autor</u></h3>
+<p>
+Atributul name poate fi utilizat pentru a furniza informații legate de autorul paginii și despre Copyright (drepturile de autor).<br>
+Exemplul următor ilustrază aceste lucruri:
+</p>
+<ul>
+   <li>&ltmeta name="author" content="web Nadejda"&gt</li>
+   <li>&ltmeta name="copyright" content="ceiti.md"&gt</li>
+</ul>
+<h3><u>Persoana de contact</u></h3>
+<p>
+Pentru a putea furniza informații despre persoana care administrează site-ul, se utilizează atributul http-equiv.<br>
+În acest caz valoarea atributului content va conține o adresă e-mail eventual urmată în paranteze rotunde de un nume complet al persoanei.<br>
+<b>Exemplu:</b>
+</p>
+<ul>
+   <li>&ltmeta http-equiv="from" content="web@ceiti.md (web Nadejda)"&gt</li>
+   <li>&ltmeta http-equiv="reply-to" content=="scutelnic2501@yahoo.com (Nadejda web)"&gt</li>
+</ul>
+<h3><u>Setul de caractere utilizat</u></h3>
+<p>
+Setul de caractere se stabilește prin intermediul atributului charset.<br>
+În mod implicit setul de caractere al unei pagini Web este western.<br>
+Opțional acest set de caractere poate fi stabilit prin următoarea exprimare:
+</p>
+<ul>
+   <li>&ltmeta http-equiv="content-type" content="text/html; charset=ISO-8859-1"&gt</li>
+</ul>
+<p>
+Pentru a se putea utiliza diacriticele limbii române trebuie ales setul de caractere Sud-Est European:
+</p>
+<ul>
+   <li>&ltmeta http-equiv="content-type" content="text/html; charset=ISO-8859-2"&gt</li>
+</ul>
+<h3><u>Reincarcarea automata a unei pagini WEB</u></h3>
+<p>
+O utilizare interesantă a atributului http-equiv este aceea de a seta reincărcarea automată în fereastra browser-ului a aceleiași pagini (de exemplul pagina cu evoluția cursurilor la o bursă) sau a unei pagini noi.<br>
+În acest fel se obțin facilități dinamice pentru un Website.<br>
+Pentru a reincărca aceeași pagină la un interval precizat de secunde se utilizează atributul http-equiv setat la valoarea refresh iar atributul content setat la valoarea numărului de secunde după care se dorește ca pagina să fie reactualizată.<br>
+Exemplul 1. Aceeași pagină va fi reâncărcată după 5 secunde:
+</p>
+<ul>
+    <li>&ltmeta http-equiv="refresh" content="5"&gt</li>
+</ul>
+<p>
+Exemplul 2. O altă pagină (cuprins.html) va fi reâncărcată după 9 secunde:
+</p>
+<ul>
+   <li>&ltmeta http-equiv="refresh" content="9; url='cuprins.html'"&gt</li>
+</ul>
+<h3><u>Limba utilizata in pagina</u></h3>
+<p>
+Informaţia legată de limba utilizată în pagina web este furnizată de atributul http-equiv configurat la valoarea keywords împreună cu atributul lang.<br>
+Exemplul 1. Pagina va furniza informația că limba utilizată este Engleza:
+</p>
+<ul>
+    <li>&ltmeta name="keywords" lang="en-us" content="university, Chisinau, Moldova, prestige, teacher, student"&gt</li>
+</ul>
+<p>
+Exemplul 2. Pagina va furniza informația că limba utilizată este Româna:
+</p>
+<ul>
+    <li>&ltmeta name="keywords" lang="ro" content="universitate, Chișinău, prestigiu, Romania, profesor, student"&gt</li>
+</ul>
+<h3><u>Comentariile</u></h3>
+<p>
+Comentariile sunt blocuri de text utile care prezintă informații de proiectare utile despre modul în care a fost scris un fișier sursă „.html”. Comentariile sunt ignorate de către browser la incarcarea paginii.<br>
+Pentru a insera un bloc de comentarii se utilizează sintaxa:
+</p>
+<div class="code-container">
+	<xmp>
+   <!--
+     Comentarii …
+   -->
+	</xmp>
+</div>
+<p>
+Blocul de comentarii poate fi plasat oriunde este necesar în cadrul documentului „.html” și se poate extinde pe mai multe rânduri;
+</p>
+<hr>
+<h2>Aceasta a fost cursul online bazat pe Documentarea unei pagini WEB in HTML. Pentru a te întoarce la pagina cu celelalte teme apasă pe butonul de mai jos.</h2>
+<a href="teme.html" class="back-home-button">Înapoi la pagina cu teme</a>
+</body>
+</html>

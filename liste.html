@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="temestyle.css">
+	<title>Liste. Noțiuni și marcaje</title>
+</head>
+<body>
+	<h1><u>Liste. Noțiuni și marcaje</u></h1>
+<p>
+Unul din cele mai obișnuite elemente din documentele cu mai multe pagini este un set de definiții, referințe sau indexuri. Glosarele sunt exemple clasice în acest sens; cuvintele sunt listate în ordine alfabetică, urmate de definiții ale termenilor respectivi. în HTML, întreaga secțiune a unui glosar va fi gestionată printr-o listă de definiții, care este inclusă într-o pereche de marcaje de listă de definiții: <b>&ltdl&gt</b>...<b>&lt/dl&gt</b> (de la "definition list" = listă de definiții).
+Observații:</p>
+<ul>
+<li> Un termen al listei este inițiat de eticheta <b>&ltdt&gt</b> (de la "definition term" = termen definit);</li>
+<li> Definiția unui termen este inițiată de eticheta <b>&ltdd&gt</b> (de la "definition description" = descrierea definiției);</li>
+<li> Definitia unui termen începe cu o linie noua și este indentată;</li>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Liste_ex1</title>
+</head>
+<body><h1 align="center">O listă de definiții</h1><hr>
+<dl>
+Glosar de termeni de World Wide Web
+<dt><b>hypertext</b>
+<dd> - o interconectare Web de informații de tip text, în care orice cuvânt sau frază  poate face legatură către un alt punct din document sau către un alt document
+<dt><b>date</b>
+<dd> - fluxul nesfârșit de materiale care apar pe Internet, spre deosebire de <em>informații</em> care sunt date cu un anumit înteles sau valoare
+<dt><b>informație</b>
+<dd> - sub-setul de date care are efectiv semnificație și care este util la momentul  curent
+</dl>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Liste neordonate</u></h3>
+<p>
+O listă neordonată este un bloc de text delimitat de etichetele corespondente <b>&ltul&gt</b>...<b>&lt/ul&gt</b> (" ul " vine de la " unordered list " = lista neordonată). Fiecare element al listei este inițiat de eticheta <b>&ltli&gt</b> (list item).<br>
+Lista va fi intentată față de restul paginii Web și fiecare element al listei începe pe un rând nou.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Liste_ex2</title>
+</head>
+<body><h1 align="center">O lista neordonată</h1><hr>
+Glosar de termeni de World Wide Web
+<ul>Culori  uzuale disponibile prin nume
+   <li>Black
+   <li>White
+   <li>Red
+   <li>Green
+   <li>Blue
+   <li>Yellow
+   <li>Purple
+   <li>Aqua
+</ul>
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+Tag-urile <b>&ltul&gt</b> și <b>&ltli&gt</b> pot avea un atribut type care stabilește caracterul afișat în fața fiecărui element al listei. Valorile posibile al acestui atribut sunt:
+</p>
+<uL>
+<li>"circle" (cerc)</li>
+<li>"disc" (disc plin) (valoarea prestabilită);</li>
+<li>"square" (pătrat)</li>
+</uL>
+<p>
+Listele neordonate pot fi imbricate pe mai multe niveluri
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Liste_ex3</title>
+</head>
+<body>
+<h1  align="center">O lista neordonată de liste  neordonate</h1>
+<hr>
+Glosar de termeni de World Wide Web
+<ul>Elemente  și atribute a unei pagini HTML
+   <li>Frameset
+     <ul>Atribute: 
+        <li>cols
+        <li>rows
+        <li>border
+     </ul>
+   <li>Frame
+     <ul>Atribute:
+        <li>src
+        <li>name
+        <li>scrolling
+     </ul>
+</ul>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Liste ordonate</u></h3>
+<p>
+O listă ordonată de elemente este un bloc de text delimitat de etichetele corespondente <b>&ltol&gt</b>...<b>&lt/ol&gt</b> (" ol " vine de la " ordered list " = lista ordonată).<br>
+Fiecare element al listei este inițiat de eticheta <b>&ltli&gt</b> (list item).<br>
+Lista va fi identată față de restul paginii Web și fiecare element al listei începe pe un rând nou.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>listex_4</title>
+</head>
+<body>
+<h1 align="center">O lista ordonata</h1>
+<hr>
+<ol>Culori  uzuale disponibile prin nume
+   <li>Black
+   <li>White
+   <li>Red
+   <li>Green
+   <li>Blue
+   <li>Yellow
+   <li>Purple
+   <li>Aqua
+</ol>
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+Tag-urile <b>&ltol&gt</b> și <b>&ltli&gt</b> pot avea un atribut type care stabilește tipul de caractere utilizate pentru ordonarea listei. Valorile posibile sunt:
+</p>
+<ul>
+<li>" A " pentru ordonare de tipul A , B , C , D etc. ( litere mari );</li>
+<li>" a " pentru ordonare de tipul a , b , c , d etc. ( litere mici );</li>
+<li>" I " pentru ordonare de tipul I , II , III , IV etc. ( cifre romane mari );</li>
+<li>" i " pentru ordonare de tipul i , ii , iii , iv etc. ( cifre romane mici );</li>
+<li>" 1 " pentru ordonare de tipul 1 , 2 , 3 , 4 etc. ( cifre arabe - opțiune prestabilită);</li>
+</ul>
+<p>
+Următorul exemplu este o listă ordonată cu cifre romane:
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Liste_ex5</title>
+</head>
+<body>
+<h1 align="center">O lista ordonata cu cifre  romane</h1>
+<hr>
+<ol type="I">Culori uzuale disponibile prin nume
+   <li>Black
+   <li>White
+   <li>Red
+   <li>Green
+   <li>Blue
+   <li>Yellow
+   <li>Purple
+   <li>Aqua
+</ol>
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+Tag-ul <b>&ltol&gt</b> poate avea un atribut start care stabilește valoarea inițială a secvenței de ordonare. Valoarea acestui atribut trebuie să fie un numar întreg pozitiv.<br>
+Următorul exemplu este o listă ordonată cu litere mari, începând de la valoarea C.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Liste_ex6</title>
+</head>
+<body>
+<h1 align="center">O listă ordonată cu litere  mari, incepând de la valoarea C</h1>
+<hr>
+<ol type="A" start="3">Culori uzuale  disponibile prin nume
+   <li>Red
+   <li>Green
+   <li>Blue
+   <li>Yellow
+   <li>Purple
+   <li>Aqua
+ 
+</ol>
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+Tag-ul <b>&ltli&gt</b> poate avea un atribut value care stabilește valoarea pentru elementul respectiv al listei. Valoarea acestui atribut trebuie să fie un numar întreg pozitiv (vezi următorul exemplu):
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Liste_ex7</title>
+</head>
+<body>
+<h1 align="center">O listă ordonată având itemi setați individual</h1>
+<hr>
+<ol start="3">Repetați următorii pași ai algoritmului
+   <li>salvați fișierul;
+   <li value="6">încărcați fișierul în browser;
+   <li>schimbați browserul utilizat
+   <li>încărcați din nou fișierul
+</ol>
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+Listele ordonate pot fi imbricate intre ele sau cu liste neordonate, ca în exemplul următor:
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head><title>listex_8</title></head>
+<body><h1  align="center">O listă ordonată de liste  ordonate și neordonate</h1><hr>
+<ol>Un  sistem informatic include:
+    <li>Hardware:
+        <ol>
+            <li>placă de bază
+            <li>procesor
+            <li>memorie
+            <li>harddisk
+        </ol>
+    <li>Software:
+        <ul>
+            <li>Linux
+            <li>Windows
+            <li>OS/2
+            <li>Unix
+        </ul>
+    <li>Software de aplicație:
+   <ul  type="disc">
+            <li>VisualC++
+            <li>Java
+            <li>SQL
+            <li>CorelDraw
+    </ul>
+</ol>
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+O listă de meniuri este un bloc delimitat de etichete corespondente <b>&ltmenu&gt</b>...<b>&lt/menu&gt</b>. Fiecare element al listei este inițiat de eticheta <b>&ltli&gt</b> ( list item ). Cele mai multe browsere afișează lista de meniuri ca pe o lista neordonată.<br>
+O lista de directoare este un bloc delimitat de etichete corespondente <b>&ltdir&gt</b>...<b>&lt/dir&gt</b> (de la " director "). Fiecare element al listei este inițiat de eticheta <b>&ltli&gt</b> (list item). Cele mai multe browsere afișează lista de directoare ca pe o lista neordonată.<br>
+(Nu se recomanda utilizarea acestori tipuri de liste).
+</p>
+<h3><u>Utilizări speciale ale listelor</u></h3>
+<p>
+Dacă într-o listă, în loc de elementele acesteia introduse prin <b>&ltli&gt</b>, se inserează un bloc de text, aceasta va fi identat ( întocmai ca elementele unei liste), exemplu:
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Liste_ex9</title>
+</head>
+<body>
+<h1>Un bloc de text indentat</h1><hr>
+<ol>Un bloc de text indentat. Un bloc de text indentat. Un bloc de text indentat. Un bloc de text indentat.
+Un bloc de text indentat. Un bloc de text indentat. Un bloc de text indentat. Un bloc de text indentat. Un bloc de text indentat.
+</ol>
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+în exemplul următor lista de definiții are itemii <b>&ltdt&gt</b> și <b>&ltdd&gt</b> multipli:
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Liste_ex10</title>
+</head>
+<body><h1  align="center">O listă de definiții specială</h1>
+<hr>
+<dl>Program
+<dt><b>Luni</b>
+<dt><b>Marti</b>
+<dt><b>Miercuri</b>
+<dd><i>Ora 9.00.</i>Insciere
+<dd><i>Ora 11.00.</i>Audieri
+<dd><i>Ora 13.30.</i>Raspunsuri
+</dl>
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+Ultimul exemplu este o lista neordonată personalizată care utilizează pe post de elemente imagini și texte.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Liste_ex11</title>
+</head>
+<body><h1>O  lista personalizată</h1><hr>
+<ul>Tipuri  de masini Volkswagen sunt:<br />
+<img src="images/reddot.gif">Golf<br />
+<img src="images/reddot.gif">Jetta<br />
+<img src="images/reddot.gif">Passat<br />
+<img src="images/reddot.gif">Bora<br />
+<img src="images/reddot.gif">Corrado<br />
+<img src="images/reddot.gif">Transporter<br />
+</body>
+</html>
+	</xmp>
+</div>
+<hr>
+<h2>Aceasta a fost cursul online bazat pe liste în HTML. Pentru a te întoarce la pagina cu celelalte teme apasă pe butonul de mai jos.</h2>
+<a href="teme.html" class="back-home-button">Înapoi la pagina cu teme</a>
+</body>
+</html>

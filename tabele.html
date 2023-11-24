@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="temestyle.css">
+	<title>Tabele. Notiuni si marcaje</title>
+</head>
+<body>
+	<p>
+Tabelele ne permit să creem o rețea dreptunghiulară de domenii, fiecare domeniu având propriile opțiuni pentru culoarea fondului, culoarea textului, alinierea textului etc.<br>
+Pentru a insera un tabel se folosesc etichetele corespondente <b>&lttable&gt</b>...<b>&lt/table&gt</b>. Un tabel este format din rânduri. Pentru a insera un rând intr-un tabel se folosesc etichetele <b>&lttr&gt</b>...<b>&lt/tr&gt</b> ( de la " table row "= rând de tabel ).Folosirea etichetei de sfârșit </tr> este opțională.<br>
+Un rând este format din mai multe celule ce conțin date.<br>
+O celula de date se introduce cu eticheta <b>&lttd&gt</b>...<b>&lt/td&gt</b>, exemplu:
+	</p>
+	<div class="code-container">
+		<xmp>
+<html>
+<head>
+<title>Tabel_ex1</title>
+</head>
+<body>
+<h1 align="center">Un tabel simplu format din 4 linii și 2 coloane</h1>
+<hr>
+<table>
+<tr><td>cell 11</td><td>cell 11</td></tr>
+<tr><td>cell 21</td><td>cell 22</td></tr>
+<tr><td>cell 31</td><td>cell 32</td></tr>
+<tr><td>cell 41</td><td>cell 42</td></tr>
+</table>
+</body>
+</html>
+		</xmp>
+	</div>
+	<p>
+în mod prestabilit, un tabel nu are chenar. Pentru a adăuga un chenar unui tabel, se utilizează un atribut al etichetei <b>&lttabel&gt</b> numit border.<br>
+Acest atribut poate primi ca valoare orice numar intreg ( inclusiv 0 ) și reprezintă grosimea în pixeli a chenarului tabelului.<br>
+Dacă atributul border nu este urmat de o valoare atunci tabelul va avea o grosime prestabilită egală cu 1 pixel, o valoare egală cu 0 a grosimii semnifică absenta chenarului.<br>
+Când atributul border are o valoare nenulă chenarul unui tabel are un aspect tridimensional, exemplu:
+	</p>
+	<div class="code-container">
+		<xmp>
+<html>
+<head>
+<title>Tabel_ex2</title>
+</head>
+<body>
+<h1 align="center">Un tabel simplu cu chenar</h1>
+<hr>
+<table border="4">
+<tr><td>cell 11</td> <td>cell 11</td></tr>
+<tr><td>cell 21</td> <td>cell 22</td></tr>
+<tr><td>cell 31</td> <td>cell 32</td></tr>
+<tr><td>cell 41</td> <td>cell 42</td></tr>
+</table>
+</body>
+</html>
+		</xmp>
+	</div>
+	<h3><u>Alinierea tabelului</u></h3>
+	<p>
+Pentru a alinia un tabel într-o pagină Web se utilizează atributul align al etichetei <b>&lttable&gt</b>, cu următoarele valori posibile:
+</p><ul>
+<li>"left " ( valoarea prestabilita );</li>
+<li>"center ";</li>
+<li>"right ".</li>
+</ul>
+<p>
+Alinierea este importantă pentru textul ce inconjoară tabelul. Astfel :
+</p><ul>
+<li>Dacă tabelul este aliniat stanga ( &lttable align="left"&gt ), atunci textul care urmează după punctul de inserare al tabelului va fi dispus în partea dreapta a tabelului.</li>
+<li>Dacă tabelul este aliniat dreapta ( &lttable align="right"&gt ), atunci textul care urmează după punctul de inserare al tabelului va fi dispus în partea stanga a tabelului.</li>
+<li>Dacă tabelul este aliniat pe centru ( &lttable align="center"&gt ), atunci textul care urmează după punctul de inserare al tabelului va fi afișat pe toata lățimea paginii, imediat sub tabel.</li>
+	</ul>
+	<div class="code-container">
+		<xmp>
+<html>
+<head>
+<title>Tabel_ex3</title>
+</head>
+<body>
+<h1 align="center">Un tabel aliniat la dreapta</h1>
+<hr> 
+Text inainte de tabel. Text inainte de tabel. Text inainte de  tabel. Text inainte de tabel. Text inainte de tabel. Text inainte de tabel. Text inainte de tabel.
+<tr><td>cell 11</td><td>cell 11</td></tr>
+<tr><td>cell 21</td><td>cell 22</td></tr>
+</table>
+Text după tabel.Text după tabel.Text după tabel.Text după tabel.Text după tabel.Text după tabel. Text după tabel.Text după tabel.Text după tabel.Text după tabel.Text după tabel.
+</body>
+</html>
+		</xmp>
+	</div>
+	<p>
+Distanta dintre tabel și celelalte elemente din pagina Web poate fi stabilită cu ajutorul atributelor hspace și vspace al etichetei <b>&lttable&gt</b>.<br>
+Valoarea atributului hspace poate fi orice numar pozitiv, inclusiv 0, și reprezintă distanta pe orizontala dintre tabel și celelalte elemente ale paginii Web.<br>
+Valoarea atributului vspace poate fi orice numar pozitiv, inclusiv 0, și reprezintă distanta pe verticala dintre tabel și celelalte elemente ale paginii Web.<br>
+Aceste atribute funcționează numai cu Netscape Communicator.
+	</p>
+	<h3><u>Definirea culorilor de fond pentru un tabel</u></h3>
+	<p>
+Culoarea de fond se stabilește cu ajutorul atributului bgcolor, care poate fi atasat intregului tabel prin eticheta <b>&lttable&gt</b>, unei linii prin eticheta <b>&lttr&gt</b> sau celule de date prin eticheta <b>&lttd&gt</b>...<b>&ltbr&gt</b>.
+Valorile pe care le poate primi bgcolor sunt cele cunoscute pentru o culoare.<br>
+Dacă în tabel sunt definite mai multe atribute bgcolor, atunci prioritatea este următoarea: <b>&lttd&gt, &lttr&gt, &lttable&gt</b>(cu prioritate cea mai mica).
+	</p>
+	<div class="code-container">
+		<xmp>
+<html>
+<head>
+<title>Tabel_ex4</title>
+</head>
+<body>
+<h1 align="center">Un tabel simplu colorat</h1>
+<hr>
+<table border="3" bgcolor="green">
+<tr><td>verde 11</td><td bgcolor="red">rosu 12</td></tr>
+<tr bgcolor="blue"><td>albastru 21</td><td bgcolor="yellow">galben 22</td></tr>
+<tr bgcolor="cyan"><td>cell 31</td><td>cell 32</td></tr>
+<tr><td>cell 41</td> <td bgcolor="white">cell 42</td></tr>
+</table>
+</body>
+</html>
+		</xmp>
+	</div>
+	<p>
+Culoarea textului din fiecare celula se poate stabili cu ajutorul expresiei:<br>
+<b>&ltfont color="valoare"&gt</b>...<b>&lt/font&gt</b>.
+	</p>
+	<h3><u>Dimensiunarea celulei unui tabel</u></h3>
+	<p>
+Distanta dintre doua celule vecine se definește cu ajutorul atributului cellspacing al etichetei <b>&lttable&gt</b>.<br>
+Valorile acestui atribut pot fi numere intregi pozitive, inclusiv 0, și reprezintă distanta în pixeli dintre doua celule vecine.<br>
+Valoarea prestabilita a atributului cellspacing este 2.<br>
+	</p>
+	<div class="code-container">
+		<xmp>
+<html>
+<head>
+<title>Tabel_ex5</title>
+</head>
+<body>
+<h1 align="center">Un tabel fara chenar de celule alipite</h1>
+<hr>
+<table cellspacing="0">
+<tr><td bgcolor="gray">gri 11</td><td bgcolor="red">rosu 12</td></tr>
+<tr bgcolor="blue"><td>albastru 21</td><td bgcolor="yellow">galben 22</td></tr>
+</table>
+</body>
+</html>
+		</xmp>
+	</div>
+	<p>
+Distanta dintre marginea unei celule și conținutul ei poate fi definita cu ajutorul atributului cellpadding al etichetei <b>&lttable&gt</b>.<br>
+Valorile acestui atribut pot fi numere intregi pozitive, și reprezintă distanta în pixeli dintre celule și conținutul ei.<br>
+Valoarea prestabilita a atributului cellpadding este 1.
+	</p>
+	<div class="code-container">
+		<xmp>
+<html>
+<head>
+<title>tabelex_6</title>
+</head>
+<body><h1 align=center>Un tabel de celule mari</h1>
+<hr>
+<table border cellpadding="20">
+<tr><td>gri 11</td><td>rosu 12</td></tr>
+<tr><td>albastru 21</td><td>galben 22</td></tr>
+</table>
+</body>
+</html>
+		</xmp>
+	</div>
+	<h3><u>Dimensionarea unui tabel</u></h3>
+	<p>
+Dimensiunile unui tabel - latime și inălțimea - pot fi stabilite exact prin intermediul a doua atribute, width și height, ale etichetei <b>&lttable&gt</b>.<br>
+Valorile acestor atribute pot fi:
+<ul>
+<li>numere intregi pozitive reprezentând latime respectiv inălțimea în pixeli a tabelului;</li>
+<li>numere intregi intre 1 și 100, urmate de semnul %, reprezentând fracțiunea din latime și inălțimea totala a paginii.</li>
+</ul>
+	</p>
+	<div class="code-container">
+		<xmp>
+<html>
+<head>
+<title>Tabel_ex7</title>
+</head>
+<body>
+<h1 align="center">Un tabel de de 200 pixeli X 50%</h1>
+<hr>
+<table border width="200" height="50%">
+<tr><td>cell 11</td><td>cell 12</td></tr>
+<tr><td>cell 21</td><td>cell 22</td></tr>
+</table>
+</body>
+</html>
+		</xmp>
+	</div>
+	<p>
+În exemplul următor se utilizează un truc care permite afișarea într-o pagină Web a unui text poziționat în centrul paginii.
+	</p>
+	<div class="code-container">
+		<xmp>
+<html>
+<head>
+<title>Tabel_ex8</title>
+</head>
+<body>
+<h1 align="center">Un text centrat într-o pagina</h1>
+<table width="100%" height="100%">
+<tr><td align="center"><h2>Text centrat.</h2></td></tr>
+</table>
+</body>
+</html>
+		</xmp>
+	</div>
+<h3><u>Titlul unui tabel</u></h3>
+<p>
+Unui tabel i se poate atașa un titlu cu ajutorul etichetei <b>&ltcaption&gt</b> ( de la "table caption" = titlu tabel ).<br>
+Aceasta eticheta trebuie plasata în interiorul etichetelor <b>&lttable&gt</b>...<b>&lt/table&gt</b>, dar nu în interiorul etichetelor <b>&lttr&gt</b> sau <b>&lttd&gt</b><br>
+Titlul unui tabel poate fi aliniat cu ajutorul atributului align al etichetei <b>&ltcaption&gt</b> care poate lua una dintre valorile:
+</p>
+<ul>
+<li>" bottom " ( sub tabel );</li>
+<li>" top " ( deasupra tabelului );</li>
+<li>" left " ( la stanga tabelului );</li>
+<li>" right " ( la dreapta tabelului ).</li>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Tabel_ex9</title>
+</head>
+<body>
+<h1  align="center">Un tabel cu titlu</h1>
+<table border><caption align="top">Masini
+<tr><td>Mercedes</td><td>Citroen</td><td>Jaguar</td></tr>
+<tr><td>BMW</td><td>Volvo</td><td>Renault</td></tr>
+</table>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Cap de tabel</u></h3>
+<p>
+Un tabel poate avea celule cu semnificația de cap de tabel. Aceste celule sunt introduse de eticheta <b>&ltth&gt</b> ( de la " tabel header " = cap de tabel ) în loc de <b>&lttd&gt</b>.<br>
+Toate atribute care pot fi atașate etichetei <b>&lttd&gt</b> pot fi de asemenea atașate etichetei <b>&ltth&gt</b>.<br>
+Conținutul celulelor definite cu <b>&ltth&gt</b> este scris cu caractere aldine și centrat.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Tabel_ex10</title>
+</head>
+<body>
+<h1 align="center">Un tabel cu titlu și cap de tabel</h1>
+<table border><caption align="bottom">Preturile  masinii
+<tr><th>Pret</th><th>Citroen</th><th>Jaguar</th><th>BMW</th><th>Volvo</th></tr>
+<tr><th>în dolari</th><td>5000</td><td>100000</td><td>50000</td><td>80000</td></tr>
+<tr><th>în  lei</th><td>2000000</td><td>2000000000</td><td>2000000</td><td>16000000</td></tr>
+</table>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Alinierea continutului unei celule</u></h3>
+<p>
+Alinierea pe orizontala a conținutului unei celule se face cu ajutorul atributului align care poate lua valorile:
+</p>
+<ul>
+<li>"left" ( la stanga );</li>
+<li>"center" ( centrat , valoarea prestabilita );</li>
+<li>"right" ( la dreapta );</li>
+<li>"char" ( alinierea se face fata de un caracter ).</li>
+</ul>
+<p>
+Alinierea pe verticala a conținutului unei celule se face cu ajutorul atributului valign care poate lua valorile:
+</p>
+<ul>
+<li>"baseline" ( la baza );</li>
+<li>"bottom" ( jos );</li>
+<li>"middle" ( la mijloc, valoarea prestabilita );</li>
+<li>"top" ( sus ).</li>
+</ul>
+<p>
+Aceste atribute pot fi atașate atât etichetei <b>&lttr&gt</b> pentru a defini tuturor elementelor celulelor unui rând, cat și etichetelor <b>&lttd&gt</b> și <b>&ltth&gt</b> pentru a stabili alinierea textului într-o singura celula.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Tabel_ex11</title>
+</head>
+<body>
+<h1 align="center">Un tabel avand conținutul celulelor  aliniate</h1>
+<table border width="50%" height="50%">
+<tr align="right"><td>Aici</td><td>alinierea</td><td>este centru</td><td>dreapta</td></tr>
+<tr><td align="left">stanga</td><td align="center">centru</td><td valign="top">sus</td><td valign="bottom">jos</td></tr>
+<tr align="left"><td>aici</td><td>alinierea</td><td>este centru</td><td>stanga (implicita)</td></tr></table>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Dimensionarea exacta a celulelor unui tabel</u></h3>
+<p>
+Dimensiunea unei celule de tip <b>&lttd&gt</b> sau de tip <b>&ltth&gt</b> pot fi stabilite exact cu ajutorul a două atribute ale acestor etichete: width pentru latime și height pentru inălțime.<br>
+Valorile posibile ale acestor atribute sunt:
+</p>
+<ul>
+<li>Numere intregi pozitive ( inclusiv 0 ) reprezentand dimensiunea în pixeli a latimii, respectiv a inaltimii unei celule;</li>
+<li>Procente din latime , respectiv inaltimea tabelului.</li>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Tabel_ex12</title>
+</head>
+<body><h1  align=center>Un tabel cu celule de 100x150 de pixeli</h1>
+<hr>
+<table border>
+<tr><td width="100" height="150">cell 11</td><td width="100" height="150">cell 11</td></tr>
+<tr><td width="100" height="150">cell 21</td><td width="100" height="150">cell 22</td></tr>
+</table>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Tabele de forme oarecare</u></h3>
+<p>
+Un tabel trebuie privit ca o retea dreptunghiulara de celule. Cu ajutorul a doua atribute ale etichetelor <b>&lttd&gt</b> și <b>&ltth&gt</b>, o celula se poate extinde peste celule vecine.<br>
+Astfel:
+</p>
+<ul>
+<li>Extinderea unei celule peste celulele din dreapta ei se face cu ajutorul atributului colspan, a cărui valoare determină numarul de celule care se unifică.</li>
+<li>Extinderea unei celule peste celulele dedesubt se face cu ajutorul atributului rowspan, a carui valoare determină numarul de celule care se unifică.</li>
+<li>Sunt posibile extinderi simultane ale unei celule pe orizontala și pe verticala. în acest caz , în etichetele <b>&lttd&gt</b> și <b>&ltth&gt</b> vor fi prezente ambele atribute colspan și rowspan.</th>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Tabel_ex13</title>
+</head>
+<body>
+<h1 align="center">Un tabel simplu cu chenar</h1>
+<hr>
+<table border="3">
+<tr><td rowspan="3">cell 11<br>cell 21<br>cell 31</td><td>cell 12</td><td colspan="2" rowspan="3">cell 13, cell 14<br>cell 23, cell 24<br>cell 33, cell 34</td></tr>
+<tr><td>cell 22</td></tr>
+<tr><td>cell 32</td></tr>
+<tr><td>cell 41</td> <td colspan="3">cell 42, cell 43, cell 44</td></tr>
+</table>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Atributul "no wrap"</u></h3>
+<p>
+Atributul nowrap apartine elementelor <b>&lttd&gt</b> și <b>&ltth&gt</b> ; el interzice intreruperea unei linii de text.<br>
+Astfel , în tabel pot apărea coloane cu o lățime oricit de mare.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Tabel_ex14</title>
+</head>
+<body>
+<h1 align="center">Un tabel cu celule de latime mare</h1>
+<hr>
+<table border>
+<tr><td>cell 11</td> <td>cell 12</td></tr>
+<tr><td nowrap>cell 21</td> <td>cell 22 este foarte lata,aceasta celula este foaret lata.</td></tr>
+</table>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Celule vide ale unui tabel</u></h3>
+<p>
+Dacă un tabel are celule vide, atunci aceste celule vor aparea în tabel fară un chenar de delimitare.<br>
+În scopul de a afișa un chenar pentru celule vide se utilizează urmatoarele trucuri:</p>
+<ul>
+<li>dupa <b>&lttd&gt</b>, se pune & nbsp;;
+<li>dupa <b>&lttd&gt</b> se pune <b>&ltbr&gt</b>.
+</ul>
+<p>
+Caracterul & nbsp; ( no break space ) este de fapt caracterul spatiu. Un spațiu introdus prin intermediul acestui caracter nu va fi ignorat de browser.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Tabel_ex15</title>
+</head>
+<body>
+<h1 align="center">Un tabel cu celule vide</h1>
+<hr>
+<table border>
+<tr><td>cell 11<td><td>cell 12</td><td>cell 13</td></tr>
+<tr><td>&nbsp;</td> <td></td></tr>
+</table>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Atribute Internet Explorer pentru tabele</u></h3>
+<p>
+Urmatoarele atribute ale etichetei <b>&lttable&gt</b> functioneaza cu Internet Explorer 4.0 , 5.0, dar nu cu Netscape Communicator 4.5:
+</p>
+<ul>
+<li>background permite stabilirea unei imagini pentru fondul unui tabel.Primeste ca valoare adresa URL a imaginii folosite pentru fond;
+<li>bordercolor permite stabilirea culorii pentru chenarul unui tabel;
+<li>bordercolorlight permite stabilirea culorii pentru chenarul 3D al unui tabel;
+<li>bordercolordark permite stabilirea culorii pentru chenarul 3D al unui tabel;
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Tabel_ex16</title>
+</head>
+<body>
+<h1 align="center">Atribute "Internet Explorer"</h1><hr>
+<table border="5" background="Taj_Mahal.jpg" cellspacing="15" bordercolor="maroon" bordercolordark="red">
+<tr bgcolor="yellow"><td>cell 11</td><td>cell 12</td><td>cell 13</td></tr>
+<tr bgcolor="yellow"><td>&nbsp;</td><td></td><td></td></tr>
+</table>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Grupuri de coloane</u></h3>
+<p>
+Blocul <b>&ltcolgroup&gt</b>...<b>&lt/colgroup&gt</b> permite definirea unui grup de coloane. Atributele acceptate de <b>&ltcolgroup&gt</b> sunt:
+</p>
+<ul>
+<li>span determina numarul de coloane dintr-un grup;</li>
+<li>width determina o latime unica pentru coloanele din grup;</li>
+<li>align determina un tip unic de aliniere pentru coloanele din grup.</li>
+</ul>
+<p>
+Exemplu:
+<b>&ltcolgroup span="3" width="100"&gt</b>...<b>&lt/colgroup&gt</b>
+Într-un bloc <b>&ltcolgroup&gt</b>, coloanele pot avea configurări diferite dacă se utilizează elementul <b>&ltcol&gt</b>, care admite atributele:
+</p>
+<ul>
+<li>span identifica acea coloană din grup pentru care se face configurarea. Dacă lipsește, atunci coloanele sunt configurate în ordine;</li>
+<li>width determina o latime pentru coloana identificata prin span;</li>
+<li>align determina o aliniere pentru coloana identificata prin span.</li>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Tabel_ex17</title>
+</head>
+<body>
+<h1 align="center">Grupuri de coloane</h1>
+<hr>
+<table width="400" cellspacing="10">
+<colgroup><col width="100" align="right"><col width="100" align="center"><col width="200" align="right"></colgroup>
+<tr><td valign="top">Text în prima coloana. Text în prima coloana. Text în prima coloana. Text în prima coloana.</td>  <td valign="top">Text în coloana doua.Text în coloana doua.Text în  coloana doua.Text în coloana doua.</td><td valign="top">Text în coloana a treia. Text în coloana a treia. Text în coloana a treia. Text în coloana a treia.</td></tr>
+</table>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Atribute frame si rules</u></h3>
+<p>
+Atributul frame al etichetei <b>&lttable&gt</b> permite specificarea parților din chenarul unui tabel care vor fi afișate.
+Valorile posibile ale acestui atribut sunt:
+</p>
+<ul>
+<li>void - elimina toate muchiile exterioare ale tabelului;</li>
+<li>above - afișează o muchie în partea superioara a cadrului tabelului;</li>
+<li>below - afișează o muchie în partea inferioara a cadrului tabelului;</li>
+<li>hsides - afișează cate o muchie în partea superioara și inferioara cadrului tabelului;</li>
+<li>lhs - afișează o muchie în partea din stanga a cadrului tabelului;</li>
+<li>rhs - afișează o muchie în partea din dreapta a cadrului tabelului;</li>
+<li>vsides - afișează o muchie în partea din stanga și din dreapta a cadrului tabelului;</li>
+<li>box - afișează o muchie pe toate laturile cadrului tabelului;</li>
+<li>border - afișează o muchie pe toate laturile cadrului tabelului;</li>
+</ul>
+<p>
+Atributul rules al etichetei <b>&lttable&gt</b> permite alegerea unor delimitatori pentru celulele unui tabel. Valorile posibile sunt:
+</p>
+<ul>
+<li>none - elimina toate muchiile interioare ale tabelului;</li>
+<li>groups - afișează muchii orizontale intre toate grupurile din tabel.Grupurile sunt specificate prin elementele <b>&ltthead&gt, &lttbody&gt, &lttfoot&gt</b>și <b>&ltcolgroup&gt...&lt/colgroup&gt</b>
+<li>rows - afișează muchii orizontale intre toate liniile tabelului;</li>
+<li>cols - afișează muchii verticale intre toate coloanele tabelului;</li>
+<li>all - afișează muchii intre toate liniile și coloanele;</li>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Tabel_ex18</title>
+</head>
+<body>
+<h1 align="center">Atributele frames și rules</h1>
+<table width="400" frame="box" rules="rows" cellspacing="10">
+<tr><td>cell 11</td><td>cell 12</td><td>cell 13</td></tr>
+<tr><td>cell 21</td><td>cell 22</td><td>cell 23</td></tr>
+</table>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Subblocurile unui tabel</u></h3>
+<p>
+În specificatiile HTML 4.0, continutul unui tabel poate fi impărțit în subblocuri prin elementele:
+</p>
+<ul>
+<li><b>&ltthead&gt&lttr&gt&lttd&gt...&lt/thead&gt</b> ( un singur rand );</li>
+<li><b>&lttfoot&gt&lttr&gt&lttd&gt...&lt/tfoot&gt</b> ( un singur rand );</li>
+<li><b>&lttbody&gt&lttr&gt&lttd&gt...&lt/tbody&gt</b> ( oricate randuri );</li>
+</ul>
+<p>
+Într-un tabel exista un singur subbloc de tipul <b>&ltthead&gt</b> și un singur subbloc de tipul <b>&lttfoot&gt</b>, dar pot exista mai multe subblocuri de tip <b>&lttbody&gt</b>.
+</p>
+<hr>
+<h2>Aceasta a fost cursul online bazat pe liste în HTML. Pentru a te întoarce la pagina cu celelalte teme apasă pe butonul de mai jos.</h2>
+<a href="teme.html" class="back-home-button">Înapoi la pagina cu teme</a>
+</body>
+</html>

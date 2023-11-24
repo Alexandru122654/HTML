@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="temestyle.css">
+	<title>Operarea cu obiecte. Inserarea imaginilor, sunetelor și videoclipurilor</title>
+</head>
+<body>
+<h1><u>Operarea cu obiecte. Inserarea imaginilor, sunetelor și videoclipurilor.</u></h1>
+<ol type="1">
+	<li><h3><u>Inserarea imaginilor</u></h3></li>
+<p>Folosirea imaginilor sporește atractivitatea și designul paginii, duce la o mai bună ințelegere a mesajului, dar trebuie luat în considerație și faptul că excesul de imagini va duce la incărcarea greoaie a site-ului.<br>
+Există numeroase formate grafice, dar cele mai răspândite sunt:</p>
+<ul>
+<li>GIF (Graphics Interchange Format) introdus de Compuserve</li>
+<li>JPEG (Joint Photographic Expert Group)</li>
+<li>PNG (Portable Network Graphic – Format Grafic portabil în rețea)</li>
+</ul>
+<p>Aceste formate sunt dependente de platformă.<br>
+Imaginile grafice sunt construite din pixeli, care sunt puncte distincte de informație de imagine.<br>
+Fiecare pixel necesită un bit de culoare.<br>
+Principalele caracteristici ale formatelor de imagine sunt: numărul de culori, compresia, transparența, intrețeserea și animația.<br>Asemănările și deosebirile dintre cele trei formate grafice sunt:<br>
+Imaginile GIF pot utiliza doar 256 de culori, având nevoie de 8 biți, în timp ce formatele JPEG și PNG pot utiliza milioane de culori, având 24 de biți de culoare, respectiv 32 de biți /pixeli de culoare.<br>
+Ceea ce face formatul GIF atât de utilizat nu este numai paleta mică de culori (256), dar și posibilitatea reducerii numărului de culori, astfel, dacă este nevoie doar de 2 culori, se utilizează numai un bit, ceea ce reduce dimensiunea fișierului de 8 ori.<br>
+Toate aceste trei formate grafice pot comprima imaginea pentru a reduce dimensiunile fișierelor.<br>
+Comprimarea se poate face, în mod diferit, pentru fiecare format, și, din aceste motive, ele pot avea dimensiuni mai mici intr-un format decât în altul.<br>
+Formatele GIF și PNG admit culoarea transparentă, în timp ce formatul JPEG nu admite transparența.<br>
+Formatele GIF și PNG admit animația, în timp ce, cu formatul JPEG, nu se poate obține animație.<br>
+De exemplu, pentru a obține animație pentru imagini GIF se poate folosi pentru Windows pachetul GIF Construction Set, iar pentru Macintosh pachetul soft GIFBuilder.<br>
+Toate cele trei formate acceptă intrețeserea.<br>
+De exemplu, când se vizualizează o pagină web, se pot observa imaginile care apar linie cu linie, de la forma brută până la redarea finală, aceasta reprezintă intrețeserea.<br>
+Deși dimensiunea fișierelor crește cu până la 10%, cu ajutorul acestei intrețeseri, vizitatorul poate să-şi facă o imagine despre ceea ce se va descărca.<br>
+Având în vedere cele cinci caracteristici ale formatelor de imagine, acestea pot fi recomandate:</p>
+<ul>
+<li>GIF – pentru majoritatea imaginilor din web, butoane, panouri publicitare, desene etc., datorită dimensiunii mici a fișierelor.</li>
+<li>JPEG pentru fotografii, când se dorește să se redea cât mai exact culoarea reală a imaginii.</li>
+<li>PNG – pentru desene complexe, dar și pentru fotografii, acesta fiind formatul care imbină caracteristicile celor două.</li>
+</ul>
+<p>
+Imaginile pot fi descărcate de la adrese absolute sau relative.<br>
+Adresele URL (Uniform Resource Locator) reprezintă standarde de identificare a resurselor (de exemplu, fișiere) și pot fi adrese URL absolute și relative.
+</p>
+<h3><u>Adrese URL absolute</u></h3>
+<p>
+Adresele absolute identifică locația unui fișier imagine de pe Internet sau alte calculatoare conectate la Internet și au sintaxa:<b>protocol/nume_calculator/cale/nume_fișier</b><br>
+Un exemplu de adresă URL absolută:<b>http://web.ceiti.md/images/eu.jpg</b>
+unde:
+</p>
+<ul>
+<li>htpp:// – este protocolul Internet utilizat;</li>
+<li>web.ceiti.md – este numele calculatorului;</li>
+<li>images – este calea până la fișierul imagine dorit;</li>
+<li>eu.jpg – este fișierul imagine C.A.</li>
+</ul>
+<h3><u>Adrese URL relative</u></h3>
+<p>
+O adresă relativă identifică locația unei imagini, descriind o cale relativă la directorul curent unde se află fișierul imagine.<br>
+Adresele relative se referă la localizarea fișierului imagine de pe calculatorul personal și are sintaxa:<b>cale/nume_fișier.</b><br>
+Referirea la:
+</p>
+<ul>
+<li>directorul părinte se poate face prin “../”</li>
+<li>directorul rădăcină se poate face prin “/”</li>
+</ul>
+<p>Un exemplu de adresă URL relativă: <b>/../../../friend.jpg</b> sau se mai poate scrie <b>c:/windows/web/wallpaper/friend.jpg</b><br>
+Toate imaginile cu care vom lucra vor avea adresa URL exprimată în funcție de directorul ce conține documentul HTML care face referire la imagine, adică adresă relativă.<br>
+Imaginile se inseraeză în pagini cu ajutorul tag-ului <b>&ltimg&gt</b>, care este un element inline, adică poate fi inserat oriunde în pagină.<br>
+Sintaxa acestui element este: <b>&ltimg atribute&gt</b>.<br>
+în continuare este prezentat un exemplu de utilizare a elementului <b>&ltimg&gt</b>:
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head></head>
+<body>
+Hotelul TRUMP Taj Mahal
+<img src="Taj_Mahal.jpg" height="150" width="150" border="4"> de la Atlantic City
+<body>
+<html>
+	</xmp>
+</div>
+<p>
+Pentru ca acest exemplu să poată fi executat, trebuie ca fișierul Taj_Mahal.jpg să fie în același folder cu pagina, deoarece nu s-a indicat nicio adresă.
+</p>
+<h3><u>Atributele elementului img</u></h3>
+<p>
+Atributele elementului <b>&ltimg&gt</b> sunt:<b> src, alt, align, border, height, width, hspace, vspace.</b><br>
+În continuare vor fi descrise succint aceste atribute.<br>
+<br>
+<b>Atributul src</b><br>
+<br>
+Atributul <b>src</b> este un atribut obligatoriu al elementului <b>IMG,</b> care identifică fișierul ce conține imaginea care se dorește a fi inserată.<br>
+Fișierele imagine pot avea extensia: <b>.jpg, jpeg, png etc.</b><br>
+Fișierul care conține imaginea se găsește în directorul curent (ca în exemplul de mai sus), în alt folder din calculatorul curent sau în rețeaua web.<br>
+În cazul în care fișierul se află:
+</p>
+<ul>
+<li>în altă locație decât directorul curent, numele fișierului trebuie precedat de calea relativă la directorul curent;</li>
+<li>în rețeaua web, trebuie dată adresa URL absolută, ca de exemplu <b>http://ceiti.md/galerie/img_1631.jpg.</b></li>
+</ul>
+<p>
+<b>Atributul alt</b><br>
+<br>
+Există posibilitatea ca imaginile să nu se poată incărca din diferite motive, situație în care se folosește atributul alt al elementului <b>&ltimg&gt</b>.<br>
+Valoarea acestui atribut este un text, care va fi afișat în locul imaginii.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head></head>
+<body>
+<img src="Taj_Mahal.jpg" height =150 width = 150 alt="Hotelul TRUMP Taj Mahal">de la Atlantic City
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+<b>Atributul align</b><br>
+<br>
+Atributul align indică browser-ului cum va fi aliniată poza față de text. în lipsa unei opțiuni, poza este plasată acolo unde este scrisă în cod (<b>&ltimg&gt</b>este element inline, iar textul incepe de la baza pozei).<br>
+Valorile atributului sunt:</p>
+<ul>
+<li>left – aliniere la stânga și textul „curge” pe lângă imagine în dreapta ei, incepând din partea superioară;</li>
+<li>right – aliniere la dreapta și textul „curge” pe lângă imagine în stânga ei, incepând din partea superioară ;</li>
+<li>top – textul este plasat în partea superioară a imaginii;</li>
+<li>middle – textul are plasat, la mijlocul imaginii, numai primul rând, restul continuând sub imagine;</li>
+<li>bottom – textul este plasat în partea de jos a imaginii și continuă sub imagine.</li>
+</ul>
+<p>
+În exemplul următor se poate vedea modul de aliniere a imaginii într-o pagină:
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+</head>
+<body>
+<h2 align="center">Alinieri Imagini</h2>
+<pre>Aliniere Bottom </pre>
+<img src="Taj_Mahal.jpg" height="100" width="100" align="bottom">
+Aceasta este o imagine aliniata <i>bottom </i> care este alinierea implicita pe verticala.
+Numai primul rând este aliniat bottom restul textului este sub imagine.
+<pre>Aliniere Top</pre>
+<img src="Taj_Mahal.jpg" height ="100" width="100" align="top">  
+Aceasta este o imagine aliniata <i>Top </i>, care este alinierea <i> sus</i> pe verticala.
+Numai primul rând este aliniat <i>Top </i> restul textului este sub imagine.
+<pre>Aliniere Middle </pre>
+<img src="Taj_Mahal.jpg" height="100" width="100" align="middle">
+Aceasta este o imagine aliniata <i>Middle</i> care este alinierea <i>pe centru </i> pe verticala.
+Numai primul rind este aliniat <iI>Middle </i> restul textului este sub imagine.
+<pre>Aliniere Left </pre>
+<img src="Taj_Mahal.jpg" height="100" width="100" align="left">
+Aceasta este o imagine aliniata<i>Left</i>care este alinierea<i>stinga</i> pe orizontala.
+<p>Textul curge pe lingă poză în dreapta ei.
+<pre>Aliniere Right </pre>
+<img src="Taj_Mahal.jpg" height="100" width="100" align="right">
+Aceasta este o imagine aliniata <i>Right</i> care este alinierea <i>dreapta</i> pe orizontala.
+<p>Textul curge pe linga poză în stinga ei.
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+<b>Atributul border</b><br>
+<br>
+Atunci când se inserează o imagine, browser-ul o va afișa fără chenar.<br>
+Pentru a adăuga un chenar unei imagini se folosește atributul <b>border=”nr_pixeli”</b>, unde nr_pixeli reprezintă grosimea chenarului în pixeli.<br>
+Valoarea implicită este 0.<br>
+Dacă în exemplul de mai sus se mai adaugă acest atribut <b>&ltimg src="Taj_Mahal.jpg" height ="150" width = "150" border = "4"&gt</b><br>
+<b>Atributele width și height</b><br>
+<br>
+Imaginea este transferată de browser-e de la adresele URL la adresa de unde se vizualizează pagina, la dimensiunile ei reale.<br>
+Pentru a redimensiona o imagine pe lățime se folosește atributul width, iar pe inălțime se folosește atributul height.<br>
+Redimensionarea unei imagini se face în mod absolut în pixeli sau prin raportare la ecran, astfel că valorile acestor atribute pot fi date în:</p>
+<ul>
+<li>numere naturale, ce reprezintă dimensiunea în pixeli;</li>
+<li>în procente, ce reprezintă o fracțiune din dimensiunea ferestrei.</li>
+</ul>
+<h2>OBSERVATII:</h2>
+<ul>
+<li>Dacă se modifică doar o dimensiune, imaginea va fi afișată de browser proporțional;</li>
+<li>Dacă se modifică ambele dimensiuni, imaginea va fi afișată de browser deformată.</li>
+</ul>
+<p>Un exemplu de redimensionare a imaginii este dat mai jos.</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head></head>
+<body>
+<img src="Taj_Mahal.jpg" height="150" width="150" alt="Hotelul TRUMP Taj Mahal">de la Atlantic City
+<img src="Taj_Mahal.jpg" width="80" height="200" alt="Hotelul TRUMP Taj Mahal">de la Atlantic City
+<img src="Taj_Mahal.jpg" height="350" alt="Hotelul TRUMP Taj Mahal">de la Atlantic City
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+<b>Atributele hspace și vspace</b><br>
+<br>
+Aceste atribute au același efect ca și atributele cu același nume ale elementului <b>&lttable&gt</b>, și, anume, asigură distanța de la imagine la celelalte componente din pagină, pe orizontală <b>(hspace)</b> și pe verticală <b>(vspace)</b>, adică definesc spații albe în jurul imaginilor.<br>
+Un exemplu în care sunt folosite aceste atribute este dat mai jos.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head></head>
+<body>
+<p>Taj Mahal-ul a fost construit de al cincilea impărat mogul, Shah Jahan, în memoria celei de-a doua sotii 
+Mumtaz Mahal, printesa persană musulmană. impărăteasa a murit după nașterea celui de-al 14-lea copil, alături de soțul
+său, în timpul campaniei de zdrobire a rebeliunilor din Burhanpur. Moartea ei l-a afectat intr-atât pe impărat incât părul
+i-a albit în numai câteva luni. inainte de ultima suflare Mumtaz l-a rugat pe impărat patru lucruri: să-i construiască un mormânt,
+să se recăsătorească, să-şi iubească fiii și să-i viziteze mormântul la aniversare. Șahul a pierdut la decesul soției sale
+nu numai o consoartă, ci și un abil și inteligent sfetnic politic. Așa a jurat impăratul că va construi un edificiu funerar mareț și
+fără egal în lume.</p>
+<p>Hotelul TRUMP Taj Mahal <img src="Taj_Mahal.jpg" height="150" width="150" alt="Hotelul TRUMP Taj Mahal" hspace="50" vspace="20"> de la Atlantic City
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+<b>Atributul clear al elementului BR</b><br>
+<br>
+Dacă se dorește a se șterge textul din jurul unei imagini se folosește elementul <b>&ltbr clear=”valoare”&gt</b>, unde valoare poate fi:
+</p>
+<ul>
+<li>all – se șterge tot textul din jurul imaginii</li>
+<li>left – se șterge tot textul din stânga imaginii</li>
+<li>right – se șterge tot textul din dreapta imaginii</li>
+<li>none – se lasă textul din jurul imaginii</li>
+</ul>
+<p>
+În exemplul de mai sus se adaugă <b>&ltBR clear=right&gt</b>, după elementul <b>&ltimg&gt</b><br>
+O imagine poate fi utilizata pentru a stabili fondul unei pagini Web. În acest scop se foloseste atributul background al etichetei <b>&ltbody&gt</b>, având ca valoare adresa URL a imaginii.<br>
+Imaginea se multiplică pe orizontală și pe verticală până umple intregul ecran.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head><title>Imagini pentru fundal</title><head>
+<body background="../images/bg.gif">
+<pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre>
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+<b>Utilizari speciale ale imaginilor</b><br>
+<br>
+Imaginile pot fi utilizate pentru a obține efecte deosebite într-o pagină web.<br>
+Printre aceste utilizări speciale putem enumera:
+</p>
+<ul>
+<li>Linii orizontale formate cu ajutorul imaginilor;</li>
+<li>Simboluri speciale pentru elementele unei liste neordonate.</li>
+</ul>
+<li><h3><u>Inserarea sunetelor si videoclipurilor</u></h3></li>
+<p>
+Multimedia se prezintă într-o multitudine de formate, iar pe Internet veți găsi multe dintre aceste elemente inglobate în pagini web.<br>Browser-ele actuale oferă suport pentru multe dintre aceste formate, dar nu pentru toate.<br>
+Suportul pentru sunete, animații și video este tratat în mod diferit de browsere diferite.<br>
+Unele elemente pot fi manevrate intern, altele necesită anumite plug-în-uri, în vreme ce altele pot solicita activarea anumitor controale ActiveX.<br>
+În acest capitol veți afla despre diferitele formate multimedia și cum să le folosiți într-o pagină web.<br>
+Elementele multimedia (precum sunetele și video) sunt stocate în fișiere media.<br>
+Modalitatea cea mai simplă de a determina tipul unui fișier media este de a analiza extensia fișierului respectiv.<br>
+<br>
+<u><b>Formatul fișierelor multimedia ce conțin sunete.</b></u><br>
+<br>
+Sunetele pot fi stocate în diferite formate de fișiere. Astfel deosebim:
+</p>
+<ul>
+<li>Formatul MIDI<br>
+	<br>
+MIDI (Musical Instrument Digital Interface) este un format ce permite transmiterea de informații muzicale intre dispozitive electronice muzicale (precum sintetizatoare) și plăcile de sunet ale calculatoarelor.<br>
+Formatul MIDI a fost implementat în 1982 de către industria muzicală.<br>
+Acest format este foarte flexibil și poate fi folosit pentru (aproape) orice, de la crearea unor sunete foarte simple, până la crearea unora cu adevărat profesionale.<br>
+Fieșierele MIDI nu conțin sunete, ci un set de instrucțiuni digitale muzicale (note muzicale) care pot fi interpretate de plăcile de sunet ale calculatoarelor.<br>
+Dezavantajul la acest tip de fișiere constă în faptul că nu pot stoca muzică (în toată complexitatea ei), ci doar note muzicale.<br>Avantajul il constituie mărimea mică a acestor fișiere, prin urmare se pot incărca ușor într-o pagină web, precum și faptul că acest format este suportat de majoritatea sistemelor de operare și de cele mai populare browsere de Internet.<br>
+Fișierele de tip MIDI au extensia .mid sau .midi.</li>
+<br>
+<li>Formatul RealAudio<br>
+<br>
+Formatul RealAudio a fost dezvoltat pentru Internet de către Real Media.<br>
+Acest format suportă chiar și video.<br>
+Formatul permite difuzarea de informații audio (muzică on-line, Internet radio) cu lățime de bandă joasă.<br>
+Din cauza acestei lățimi de bandă, calitatea este, de cele mai multe ori, slabă.<br>
+Fișierele de tip RealAudio au extensia .rm sau .ram.</li>
+<br>
+<li>Formatul AU<br>
+<br>
+Acest formatul a fost dezvoltat de către Sun Microsystems și este suportat de majoritatea sistemelor de operare.<br>
+Aceste fișierele au extensia .au.</li>
+<br>
+<li>Formatul AIFF<br>
+<br>
+AIFF (Audio Interchange File Format) a fost dezvoltat de către Apple.<br>
+Acest tip de fișiere nu sunt suportate de toate browser-ele.<br>
+Aceste fișierele au extensia .aif sau .aiff.</li>
+<br>
+<li>Formatul SND<br>
+<br>
+SND (Sound) a fost dezvoltat, de asemenea, de către Apple și au același dezavantaj, și anume că nu sunt suportate de toate browser-ele.<br>
+Aceste fișierele au extensia .snd.</li>
+<br>
+<li>Formatul WAVE<br>
+<br>
+WAVE (waveform) a fost dezvoltat de către IBM și Microsoft.<br>
+Este un format suportat de toate computerele pe care rulează Windows și este recunoscut de majoritatea browsere-lor.<br>
+Fișierele de tip WAVE au extensia .wav.</li>
+<br>
+<li>Formatul MP3<br>
+<br>
+Fișierele MP3 sunt de fapt fișiere MPEG, dezvoltate inițial pentru video de către Moving Pictures Experts Group.<br>
+Se poate afirma că fișierele MP3 reprezintă partea de sunet dintr-un fișiere video în format MPEG.<br>
+MP3 este în prezent unul dintre cele mai populare formate folosite la inregistrarea muzicii.<br>
+Sistemul de codificare MP3 combină o bună compresie (ce duce la fișiere mici) cu calitate inaltă.<br>
+Este de așteptat ca pe viitor toate sistemele de operare să ofere suport pentru acest tip de format.<br>
+Fișierele de tip MP3 au extensia .mp3 sau .mpga.</li>
+</ul>
+<p>
+În funcție de scopul pentru care creați o pagină web multimedia va trebui să vă orientați și asupra unui anumit format de fișier.<br>
+Astfel, dacă doriți ca sunetele inregistrate (muzică sau de alt tip) să poată fi asculatet de toți vizitatorii paginii web, atunci trebuie să folosiți fișiere în format WAV, intrucât este cel mai popular format pe Internet și este suportat de majoritatea browsere-lor.<br>
+Dacă pagina web este despre inregistrări muzicale, atunci formatul cel mai potrivit este MP3.
+<b>Formatul fișierelor multimedia ce conțin video</b><br>
+Şi imaginile video pot fi stocate în diferite formate de fișiere. Astfel deosebim:
+</p>
+<ul>
+<li>Formatul AVI<br>
+<br>
+Formatul AVI (Audio Video Interleave) a fost dezvoltat de către Microsoft.<br>
+Este un format suportat de toate computerele pe care rulează Windows și este recunoscut de majoritatea browsere-lor.<br>
+Deși este un format des intâlnit pe Internet, nu este intotdeauna suportat de calculatoarele cu sisteme de operare non-Windows.<br>Fișierele de tip AVI au extensia .avi.</li>
+<br>
+<li>Formatul Windows Media<br>
+<br>
+Acest formatul a fost dezvoltat de către Microsoft.<br>
+Și acest format este unul suportat de toate computerele pe care rulează Windows, dar nu este suportat de calculatoarele cu sisteme de operare non-Windows decât în urma instalării unor extra componente (playere specializate).<br>
+Fișierele de tip Windows Media au extensia .wmv.</li>
+<br>
+<li>Formatul MPEG<br>
+<br>
+Formatul MPEG  (Moving Pictures Expert Group) este în prezent unul dintre cele mai populare formate folosite pe Internet.<br>
+Acest format este suportat de majoritatea sistemelor de operare și de cele mai populare browsere de Internet.<br>
+Fișierele de tip MPEG au extensia .mpg sau .mpeg.</li>
+<br>
+<li>Formatul QuickTime<br>
+<br>
+Formatul QuickTime a fost dezvoltat de către Apple și nu poate rula pe platformele Windows fără instalarea unui player specializat.<br>Fișierele de tip QuickTime au extensia .mov sau .qtm.</li>
+<br>
+<li>Formatul RealVideo<br>
+<br>
+Formatul RealVideo a fost dezvoltat pentru Internet de către Real Media.<br>
+Formatul permite difuzarea de informații video (video on-line, Internet video) cu lățime de bandă joasă.<br>
+Din cauza acestei lățimi de bandă, calitatea este, de cele mai multe ori, slabă.<br>
+Fișierele de tip RealVideo au extensia .rm sau .ram.</li>
+<br>
+ <li>Formatul Shockwave (Flash)<br>
+<br>
+Formatul Shockwave a fost dezvoltat de către Macromedia.<br>
+Acest format necesită instalarea unui player specializat pentru a putea rula.<br>
+în prezent, această componentă este oferită preinstalată de ultimele versiuni ale browsere-lor Netscape și Internet Explorer.<br>
+Fișierele de tip Shockwave au extensia .swf.</li>
+</ul>
+<p>
+<b>Adăugarea de informații multimedia unei pagini web</b><br>
+Informațiile multimedia pot fi redate direct de browser sau prin intermediul unui program ajutător (un player specializat), în funcție de elementul HTML și de formatul fișierului multimedia folosit.<br>
+Cea mai simplă cale de a realiza acest lucru este prin folosirea unei ancore (link) care să ducă la sursa elementului multimedia.<br>
+Este cea mai “prietenoasă” metodă intrucât oferă posibilitatea vizitatorilor de a alege intre a vedea o pagină web cu elemente multimedia sau fără acestea.<br>
+în acest caz pagina se incarcă mult mai repede nemaifiind nevoie să se incarce toate informațiile multimedia.<br>
+O metodă specifică, mai complexă, ce are ca rezultat includerea în pagina web (ca parte integrantă din aceasta) a unor informații multimedia, se realizează prin intermediul elementului <b>&ltOBJECT&gt</b>.<br>
+<b>Notă:<br>
+Deși, în funcție de browser-ul folosit, mai pot fi folosite și alte elemente, cum ar fi &ltBGSOUND&gt, recunoscut de Internet Explorer, și &ltEMBED&gt, recunoscut de Internet Explorer și Netscape, consorțiul W3C (World Wide Web Consortium) recomandă utilizarea elementului &ltOBJECT&gt.</b><br>
+Atributele utilizate cu acest element sunt:
+</p>
+<div style="color: white;" align="middle">
+<table border="1" cellspacing="0">
+    <tr>
+      <th width="100">Atribut</th>
+      <th width="550">Descriere</th>
+    </tr>
+    <tr>
+      <td>archive</td>
+      <td>Precizează locația (URL-ul) fişierelor arhivă</td>
+    </tr>
+    <tr>
+      <td>classid</td>
+      <td>Precizează locația (URL-ul) obiectului. Valorile posibile depind de proiectantul elementului de control. În Windows, aceste valori sunt inscrise în regiştri și pot fi accesate cu aplicaţia Registry Editor</td>
+    </tr>
+    <tr>
+      <td>codebase</td>
+      <td>Precizează calea (URI-ul) în care se găsește clasa obiectului specificat prin atributele classid, data şi archive</td>
+    </tr>
+    <tr>
+      <td>codetype</td>
+      <td>Specifică tipul fişierului specificat prin atributul classid</td>
+    </tr>
+    <tr>
+      <td>data</td>
+      <td>Precizează numele și locația (URL-ul) obiectului. Se poate folosi împreună sau ca o alternativă a atributului classid, în funcție de tipul obiectului</td>
+    </tr>
+    <tr>
+      <td>declare</td>
+      <td>Cind este prezent, acet atribut face ca definiția curentă introdusă de elementul &ltOBJECT&gt să fie tratată ca o simplă declarație</td>
+    </tr>
+    <tr>
+      <td>height</td>
+      <td>Specifică înălţimea suprafeţei în care va fi afişat obiectul</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>Precizează denumirea obiectului (când acesta este cuprins intr-un formular)</td>
+    </tr>
+    <tr>
+      <td>standby</td>
+      <td>Precizează textul ce va fi afişat până când este incărcat obiectul</td>
+    </tr>
+    <tr>
+      <td>tabindex</td>
+      <td>Precizează poziția elementului curent în document (ordinea în care va fi focalizat de utilizator când se folosește tastatura)</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>Determină tipul MIME asociat cu fisierul respectiv. Este un atribut optional dar recomandat când se foloseste atributul data</td>
+    </tr>
+    <tr>
+      <td>width</td>
+      <td>Specifică lăţimea suprafeţei în care va fi afişat obiectul</td>
+    </tr>
+  </table>
+</div>
+<p>
+Acest element necesită în mod obligatoriu tag-ul de inchidere corespunzător &lt/OBJECT&gt.<br>
+Împreună cu elementul &ltOBJECT&gt (în interiorul acestuia) se folosește și elementul asociat &ltPARAM&gt care definește parametrii elementului &ltOBJECT&gt.<br>
+Atributele utilizate cu acest element sunt:
+</p>
+<div align="middle" style="color: white;">
+<table border="1" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Atribut</th>
+        <th>Descriere</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>id</td>
+        <td>Precizează un identificator unic pentru element</td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>Precizează o denumire pentru element</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>Determină tipul conținutului</td>
+      </tr>
+      <tr>
+        <td>value</td>
+        <td>Specifică valoarea parametrului</td>
+      </tr>
+      <tr>
+        <td>valuetype</td>
+        <td>Specifică tipul valoarii parametrului</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+Elementul &ltOBJECT&gt poate suporta diferite tipuri de informații multimedia, cum ar fi imagini, sunete, video, pagini web etc.<br>
+în funcție de tipul acestor informații, diferă și sintaxa folosită în limbajul HTML.<br>
+Astfel, pentru a insera o imagine (în format .jpg), prin intermediul elementului &ltOBJECT&gt, se folosește următoarea sintaxă:<br>
+&ltOBJECT HEIGHT="..." WIDTH="..." TYPE="image/jpeg" DATA="nume_fisier.jpg"&gt<br>
+&lt/OBJECT&gt<br>
+Pentru a insera un sunet (în format .wav) se folosește următoarea sintaxă:<br>
+&ltOBJECT CLASSID="clsid:22D6F312-B0F6-11D0-94AB-0080C74C7E95"&gt<br>
+&ltPARAM NAME="FileName" VALUE="nume_fisier.wmv"&gt<br>
+&lt/OBJECT&gt<br>
+Pentru a insera un film (în format .wmv) se folosește următoarea sintaxă:<br>
+&ltOBJECT CLASSID="clsid:22D6F312-B0F6-11D0-94AB-0080C74C7E95"&gt<br>
+&ltPARAM NAME="FileName" VALUE="nume_fisier.wmv"&gt<br>
+&lt/OBJECT&gt<br>
+Pentru a insera o pagină web se folosește următoarea sintaxă:<br>
+&ltOBJECT TYPE="text/html" HEIGHT="..." WIDTH="..." DATA="http://www.pagina_web.com"&gt<br>
+&lt/OBJECT&gt<br>
+Pentru a insera o animație creată în Flash (în format .swf) se folosește următoarea sintaxă:<br>
+&ltOBJECT WIDTH="..." HEIGHT="..." CLASSID="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" CODEBASE="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#4,0,0,0"&gt<br>
+&ltPARAM NAME="SRC" VALUE=" nume_fisier.swf"&gt<br>
+&lt/OBJECT&gt<br>
+<b>Inserarea unui film QuickTime într-o pagină web</b>
+Formatul QuickTime a fost dezvoltat de către Apple și, deși este un format des intâlnit pe Internet, nu poate rula pe platformele Windows fără instalarea unui player specializat.<br>
+Fișierele de tip QuickTime au extensia .mov sau .qtm.<br>
+Cu ajutorul elementului &ltOBJECT&gt poate fi ușor adăugat cod într-o pagină web astfel incât un film QuickTime să poată fi inserat într-o pagină web.<br>
+Astfel, se poate seta instalarea automată a unui player QuickTime în cazul în care nu este deja instalat.<br>
+Sintaxa folosită în mod uzual este de forma următoare:<br>
+&ltOBJECT WIDTH="240" HEIGHT="300" CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab"&gt<br>
+&ltPARAM NAME="src" VALUE="sample.mov"&gt<br>
+&ltPARAM NAME="autoplay" VALUE="true"&gt<br>
+&ltPARAM NAME="controller" VALUE="true"&gt<br>
+&lt/OBJECT&lt<br>
+Atributele width şi height trebuie setate astfel incât să corespundă dimensiunii fimului QuickTime (în pixeli).<br>
+Atributul classid identifică în mod unic software-ul ce va rula filmul.<br>
+Trebuie setat "clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" astfel incât să identifice controlul ActiveX ce trebuie instalat pe computer inainte ca filmul să poată fi rulat.<br>
+Dacă utilizatorul nu are instalat respectivul control ActiveX, browser-ul poate în mod automat să-l descarce și să-l instaleze.<br>
+Atributul codebase specifică calea (URI-ul) în care se găsește clasa obiectului specificat prin atributul clsid.<br>
+Internet Explorer folosește acest atribut pentru a specifica locația de unde poate fi descărcat player-ul corespunzător.<br>
+în acest caz, trebuie setată "<b>http://www.apple.com/qtactivex/qtplugin.cab</b>", aceasta fiind locația unde se găsește ultima variantă a player-ului QuickTime.<br>
+Parametrul src trebuie să se orienteze asupra fișierului ce conține filmul.<br>
+Parametrul autoplay se setează "true" în cazul în care se dorește ca filmul să inceapă să ruleze automat.<br>
+La fel și parametrul controller se setează "true" în cazul în care se dorește să fie afișată bara de control a player-ului.<br>
+Inserarea unui film Real Video într-o pagină web<br>
+Formatul RealVideo a fost dezvoltat pentru Internet de către Real Media.<br>
+Formatul permite difuzarea de informații video (video on-line, Internet video) cu lățime de bandă joasă.<br>
+Din cauza acestei lățimi de bandă, calitatea este, de cele mai multe ori, slabă.<br>
+Fișierele de tip RealVideo au extensia .rm sau .ram.<br>
+Cu ajutorul elementului &ltOBJECT&gt se introduce codul în pagina web astfel incât filmele Real Video să poată fi inserate într-o pagină web.<br>
+Spre deosebire de formatul QuickTime, nu se poate seta instalarea automată a player-ului corespunzător în cazul în care nu este deja instalat.<br>
+Prin urmare, inainte de a putea rula un film în format Real Video, este necesară instalarea programului RealPlayer.<br>
+Versiunea pentru Windows poate fi descărcată de la adresa http://uk.real.com/?mode=rp.<br>
+Sintaxa folosită în mod uzual este de forma următoare:<br>
+&ltOBJECT WIDTH="320" HEIGHT="240" CLASSID="clsid:CFCDAA03-8BE4-11cf-B84B-0020AFBBCCFA"&gt<br>
+&ltPARAM NAME="controls" VALUE="All"&gt<br>
+&ltPARAM NAME="autostart" VALUE="true"&gt<br>
+&ltPARAM NAME="src" VALUE="sample.rm"&gt<br>
+&lt/OBJECT&gt<br>
+Atributele width şi height trebuie setate astfel incât să corespundă dimensiunii fimului Real Video (în pixeli).<br>
+Atributul classid identifică în mod unic software-ul ce va rula filmul. Trebuie setat "clsid: CFCDAA03-8BE4-11cf-B84B-0020AFBBCCFA" astfel incât să identifice controlul ActiveX ce trebuie instalat pe computer inainte ca filmul să poată fi rulat.<br>
+Parametrul src trebuie să se orienteze asupra fișierului ce conține filmul.<br>
+Parametrul autostart se setează "true" în cazul în care se dorește ca filmul să inceapă să ruleze automat.<br>
+Parametrul controls se setează "All" în cazul în care se dorește să fie afișată bara de control a player-ului sau "ImageWindow " în cazul în care NU se dorește să fie afișată bara de control a player-ului.<br>
+Alte metode de inserare a unor sunete într-o pagină web<br>
+Așa cum am atras atenția anterior, pentru introducerea de sunete într-o pagină web mai pot fi folosite și alte elemente, cum ar fi &ltBGSOUND&gt, recunoscut de Internet Explorer, și &ltEMBED&gt, recunoscut de Internet Explorer și Netscape.<br>
+Elementul &ltBGSOUND&gt este folosit pentru a insera un sunet pe fundalul unei pagini web.<br>
+Fișierele suportate de acest element pot fi în format WAV, AU sau MID.<br>
+Atributele caracteristice acestui element sunt:
+</p>
+<div style="color: white;" align="middle">
+<table border="1" cellspacing="0">
+    <tr>
+      <th>Atribut</th>
+      <th>Descriere</th>
+    </tr>
+    <tr>
+      <td>balance</td>
+      <td>Precizează balansul. Poate lua valori intre -10000 (100% stänga) și +10000 (100% dreapta)</td>
+    </tr>
+    <tr>
+      <td>delay</td>
+      <td>Defineşte timpul de pauză dintre repetiţii</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>Definește un identificator atribuit sunetului</td>
+    </tr>
+    <tr>
+      <td>loop</td>
+      <td>Precizează de câte ori va fi repetat sunetul (-1 = infinit)</td>
+    </tr>
+    <tr>
+      <td>src</td>
+      <td>Precizează locația (URL-ul) fişierului ce conține sunete</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>Precizează un titlu atribuit sunetului</td>
+    </tr>
+    <tr>
+      <td>volume</td>
+      <td>Precizează volumul. Poate lua valori intre 0 (max.) și -10000 (min.)</td>
+    </tr>
+  </table>
+</div>
+<p>
+ Sintaxa folosirii acestui element este foarte simplă:
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<body>
+<H2>Muzica în fundal </H2>
+<BGSOUND SRC="http://web.ceiti.md/muz/town.mid">
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+Folosind codul de mai sus veți obține o pagină web pe fundalul cărei se va auzi o piesă instrumentală.<br>
+Elementul &ltEMBED&gt este folosit pentru a insera elemente multimedia într-o pagină web în cazul browsere-lor care nu suportă elementul &ltOBJECT&gt.<br>
+Elementul &ltOBJECT&gt poate fi folosit cu browserele mai noi, care suportă controale ActiveX (Internet Explorer ³ 5), în vreme ce elementul &ltEMBED&gt este recomandat să fie folosit pentru browserele mai vechi.<br>
+Pentru compatibilitate, se recomandă folosirea simultană a celor două elemente. în această situație, un browser care recunoaște elementul &ltOBJECT&gt va ignora elementul &ltEMBED&gt.<br>
+Atributele caracteristice acestui element sunt:
+</p>
+<div align="middle" style="color: white;">
+<table border="1" cellspacing="0">
+    <caption>Atribute HTML</caption>
+    <tr>
+      <th>Atribut</th>
+      <th>Descriere</th>
+    </tr>
+    <tr>
+      <td>autostart</td>
+      <td>Stabileşte dacă obiectul multimedia porneste în mod automat la incărcarea paginii web. Poate lua valorile true sau false</td>
+    </tr>
+    <tr>
+      <td>height</td>
+      <td>Specifică înălţimea suprafeţei în care va fi afişat obiectul</td>
+    </tr>
+    <tr>
+      <td>hidden</td>
+      <td>Stabileşte dacă obiectul multimedia este vizibil pentru vizitatorul paginii web. Poate lua valorile true sau false</td>
+    </tr>
+    <tr>
+      <td>src</td>
+      <td>Precizează locaţia (URL-ul) fişierului ce conţine sunete</td>
+    </tr>
+    <tr>
+      <td>width</td>
+      <td>Specifică lăţimea suprafeţei în care va fi afişat obiectul</td>
+    </tr>
+    <tr>
+      <td>volume</td>
+      <td>Precizează volumul. Poate lua valori intre 0 (max.) și -10000 (min.)</td>
+    </tr>
+  </table>
+  </div>
+  <p>
+ Impreună cu elementul &ltEMBED&gt se recomandă folosirea elementului &ltNOEMBED&gt care ar trebui să conțină informații ce vor fi afișate în cazul în care browser-ul nu suportă elementul &ltEMBED&gt.<br>
+ Din nefericire, un browser care suportă elementul &ltEMBED&gt va ignora elementul &ltNOEMBED&gt, chiar dacă este incapabil să afișeze obiectul introdus de elementul &ltEMBED&gt.<br>
+ Sintaxa recomandată pentru folosirea acestui element este următoarea:<br>
+  &ltEMBED SRC="http://web.ceiti.md/cale/fișier_multimedia" WIDTH="..." HEIGHT="..." &gt
+  &ltNOEMBED&gt
+  &ltP&gtDin păcate nu aveți instalat  plugin-ul corespunzător pentru a vedea acest tip de fișier multimedia.<br>
+  Puteți vedea în continuare o imagine edificatoare.<br>
+  &ltIMG SRC="http://web.ceiti.md/cale/fișier_imagine" WIDTH="..." HEIGHT="..." ALT="o imagine edificatoare"&gt
+  &lt/NOEMBED&gt<br>
+ Se poate folosi chiar și o combinație intre elementele &ltEMBED&gt și &ltBGSOUND&gt, astfel incât, dacă unul din elemente nu este suportat de browser, să fie recunoscut celălalt.<br>
+Folosirea codului următor:<br>
+  </p>
+  <div class="code-container">
+  	<xmp>
+<html>
+<body>
+<embed src="m_v/RM.mid" width ="100" height="40" >
+<noembed>
+<h2>Muzica în fundal </h2>
+<bgsound src="m_v/RM.mid">
+</noembed>
+</body>
+</html>
+  	</xmp>
+  </div>
+  <p>
+  	<b>
+Notă:<br>
+Bara de control afișată aparține player-ului QuickTime deoarece a fost setat ca "Default Player" pentru fișierele de tip .MID.<br>
+Aplicație practică
+  	</b>
+Pentru exemplificare, vom crea un fișier test.html ce va cuprinde o parte dintre elementele prezentate anterior:
+  </p>
+  <div class="code-container">
+  	<xmp>
+<html>
+<head>
+<title>Adaugarea de informatii multimedia unei pagini web</title>
+</head>
+<body>
+<h2>Inserarea unei imagini</h2>
+<object height="200" width="200" type="image/jpeg" data="../images/Taj_Mahal.jpg">
+</object>
+<br />
+<h2>Inserarea unui sunet (format .wav)</h2>
+<object classid="clsid:22D6F312-B0F6-11D0-94AB-0080C74C7E95">
+<param name="FileName" valua="Ready.wav">
+<embed src="m_v/Ready.wav" width="100" height="40" >
+<noembed> Browser-ul dvs. nu suportă elementele object și nici embed</noembed>
+</object>
+<br />
+<h2>Inserarea unui film (format .wmv)</h2>
+<object width="240" height="160" type="video/x-ms-asf" url="3d.wmv" data="m_v/news.wmv" classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6">
+<param name="url" value="m_v/news.wmv">
+<param name="filename" value="m_v/news.wmv">
+<param name="autostart" value="1">
+<param name="uiMode" value="full">
+<param name="autosize" value="1">
+<param name="playcount" value="1">
+<embed type="application/x-mplayer2" src="m_v/news.wmv" width="240" height="160" autostart="true" showcontrols="true" pluginspage="http://www.microsoft.com/Windows/MediaPlayer/">
+</embed>
+</object>
+<br />
+<h2>Inserarea unei pagini web</h2>
+<object type="text/html" heght="200" width="400" data="ex40.html">
+</object>
+<br />
+<h2>Inserarea unei animatii Flash (format .swf)</h2>
+<object width="400" height="200" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#4,0,0,0">
+<param name="movie" value="m_v/flash.swf">
+<embed src="m_v/flash.swf" width="400" height="200">
+</embed>
+</object>
+</body>
+</html>
+  	</xmp>
+  </div>
+</ol>
+<hr>
+<h2>Aceasta a fost cursul online bazat pe Operarea cu obiecte in HTML. Pentru a te întoarce la pagina cu celelalte teme apasă pe butonul de mai jos.</h2>
+<a href="teme.html" class="back-home-button">Înapoi la pagina cu teme</a>
+</body>
+</html>

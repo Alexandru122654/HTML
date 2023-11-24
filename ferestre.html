@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="temestyle.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ferestre în HTML. Comenzi de construire a ferestrelor(cadrelor).</title>
+</head>
+<body>
+<h1><u>Ferestre în HTML. Comenzi de construire a ferestrelor(cadrelor).</u></h1>
+<p>
+Ferestrele sau cadrele ne permit să definim în fereastra browser-ului subferstre în care să fie incărcate documente HTML diferite.<br>
+Ferestrele sunt definite intr-un fișier HTML special , în care blocul &ltbody&gt...&lt/body&gt este inlocuit de blocul &ltframeset&gt...&lt/frameset&gt.<br>
+In interiorul acestui bloc, fiecare cadru este introdus prin eticheta &ltframe&gt.<br>
+Un atribut obligatoriu al etichetei &ltframe&gt este src, care primește ca valoare adresa URL a documentului HTML care va fi incărcat în acel frame.<br>
+Definirea cadrelor se face prin impărțirea ferestrelor (şi a subferestrelor) în linii și coloane:
+</p>
+<ul>
+<li>impărțirea unei ferestre intr-un număr de subferestre de tip coloană se face cu ajutorul atributului cols al etichetei &ltframeset&gt ce descrie acea fereastră;</li>
+<li>impărțirae unei ferestre intr-un număr de subferestre de tip linie se face cu ajutorul atributului rows al etichetei &ltframeset&gt ce descrie acea fereastră.</li>
+</ul>
+<p>
+Valoare atributelor cols și rows este o listă de elmente separate prin virgulă, care descriu modul în care se face impărțirea. Elementele listei pot fi:
+</p>
+<ul>
+<li>un număr intreg de pixeli;</li>
+<li>procente din dimensiunea ferestrei(număr intre 1 și 99 terminat cu %);</li>
+<li>n* care inseamna n parți din spațiul rămas;</li>
+</ul>
+<p>
+<b>Exemplu 1:</b>   cols="200,*,50%,*"  inseamnă o impărțire în 4 subferestre, dintre care prima are 200 pixeli, a treia ocupă jumătate din spațiul total disponibil, iar a doua și a patra ocupă în mod egal restul de spațiu rămas disponibil.<br>
+<b>Exemplu 2:</b>   cols="200,1*,50%,2*"  inseamnă o impărțire în 4 subferestre, dintre care prima are 200 pixeli, a treia ocupă jumătate din spațiul total disponibil iar a doua și a patra ocupă în mod egal restul din spațiul rămas disponibil, care se imparte în trei părți egale, a doua fereastră ocupând o parte, iar a patra ocupând 2 părți.
+</p>
+<h3><u>Observatii</u></h3>
+<ul>
+<li>Dacă mai multe elemente din listă sunt configurate cu *, atunci spațiul disponibil rămas pentru ele se va imparți în mod egal.</li>
+<li>O subfereastră poate fi un cadru (folosind &ltframe&gt) în care se va incarcă un document HTML sau poate fi impărțită la rândul ei în alte subfereste (folosind &ltframeset&gt).</li>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Fer_ex1</title>
+</head>
+<frameset cols="*,*">
+   <frame src="p1.html">
+   <frame src="p2.html">
+</frameset>
+</html>
+	</xmp>
+</div>
+<p>
+În exemplul următor este creată o pagina Web cu trei cadre orizontale.<br>
+Pentru al doilea cadru valoarea atributului <b>src</b> este adresa URL a unei imagini.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Fer_ex2</title>
+</head>
+<frameset rows="100,*,10%">
+   <frame src="p1.html">
+   <frame src="Taj_Mahal.jpg">
+   <frame src="p3.html">
+</frameset>
+</html>
+	</xmp>
+</div>
+<p>
+În exemplul următor este creată o matrice de 4 cadre (2 x 2).<br>
+Pentru a realiza acest lucru, se folosesc simultan cele două atribute <b>cols</b> și <b>rows.</b>
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Fer_ex3</title>
+</head>
+<frameset rows="*,*" cols="*,*">
+   <frame src="p1.html">
+ 
+   <frame src="p2.html">
+   <frame src="p3.html">
+   <frame src="p4.html">
+</frameset>
+</html>
+	</xmp>
+</div>
+<p>
+În exemplul următor este creată o pagină Web cu trei cadre mixte.<br>
+Pentru a o crea se procedează din aproape în aproape.<br>
+Mai intâi, pagina este impărțită în două subferestre de tip coloană, după care a doua subfereastră este impărțită în două subferestre de tip linie.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Fer_ex4</title>
+</head>
+<frameset cols="20%,*">
+   <frame src="p1.html">
+   <frameset rows="*,*">
+      <frame src="p2.html">
+      <frame src="p3.html">
+   </frameset>
+</frameset>
+</html>
+	</xmp>
+</div>
+<h3><u>Culori pentru chenarele cadrelor si dimensionarea chenarului unui cadru</u></h3>
+<p>
+Pentru a stabili culoarea chenarului unui cadru se utilizează atributul <b>bordercolor</b>.<br>
+Acest atribut primește ca valoare un nume de culoare sau o culoare definită în conformitate cu modelul de culoare RGB.<br>
+Atributul bordercolor poate fi atașat atât etichetei &ltframeset&gt pentru a stabili culoarea tuturor chenarelor cadrelor incluse, cât și etichetei &ltframe&gt pentru a stabili culoarea chenarului pentru un cadru individual.<br>
+Atributul border al etichetei &ltframeset&gt permite configurarea lățimii chenarelor tuturor cadrelor la un număr dorit de pixeli.<br> Valoarea prestabilită a atributului border este de 5 pixeli. O valoare de 0 pixeli va defini un cadru fără chenar.
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Fer_ex5</title>
+</head>
+<frameset cols="20%,*" bordercolor="green" border="15">
+   <frame src="p1.html">
+   <frameset rows="*,*">
+      <frame src="p2.html">
+      <frame src="p3.html">
+   </frameset>
+</frameset>
+</html>
+	</xmp>
+</div>
+<p>
+Pentru a obține cadre fără chenar se utilizează border="0".<br>
+În mod prestabilit, chenarul unui cadru este afișat și are aspect tridimensional.<br>
+Afișarea chenarului unui cadru poate fi dezactivat dacă se utilizează atributul frameborder cu valoare "no".<br>
+Acest atribut poate fi atașat atât etichetei &ltframeset&gt (dezactivarea fiind valabilă pentru toate cadrele incluse) cât și etichetei &ltframe&gt (dezactivarea fiind valabilă numai pentru un singur cadru).<br>
+Valorile posibile ale atributului frameborder sunt:
+</p>
+<ul>
+<li>yes - echivalent cu 1;</li>
+<li>no - echivalent cu 0;</li>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Fer_ex6</title>
+</head>
+<frameset cols="20%,*" border="0">
+   <frame src="p1.html">
+   <frameset rows="*,*">
+      <frame src="p2.html">
+      <frame src="p3.html">
+   </frameset>
+</frameset>
+</html>
+	</xmp>
+</div>
+<br>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Fer_ex7</title>
+</head>
+<frameset cols="20%,*" frameborder="no">
+   <frame src="p1.html">
+   <frameset rows="*,*">
+      <frame src="p2.html">
+      <frame src="p3.html">
+   </frameset>
+</frameset>
+</html>
+	</xmp>
+</div>
+<h3><u>Bare de defilare</u></h3>
+<p>
+Atributul <b>scrolling</b> al etichetei <b>&ltframe&gt</b> este utilizat pentru a adaugă unui cadru o bară de derulare care permite navigarea în interiorul documentului afișat în interiorul cadrului.<br>
+Valorile posibile sunt:
+</p>
+<ul>
+<li>yes - barele de derulare sunt adăugate intotdeauna;</li>
+<li>no - barele de derulare nu sunt utilizabile;</li>
+<li>auto - barele de derulare sunt vizibile atunci când este necesar.</li>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Fer_ex8</title>
+</head>
+<frameset cols="*,*,*">
+   <frame src="p.html" scrolling="yes" noresize>
+   <frame src="p.html" scrolling="no" noresize>
+   <frame src="p.html" scrolling="auto" noresize>
+</frameset>
+</html>
+	</xmp>
+</div>
+<p>
+Atributul noresize al etichetei <b>&ltframe&gt</b> (fără nici o valoare suplimentara) dacă este prezent, inhibă posibilitatea prestabilită a utilizatorului de a redimensiona cadrul cu ajutorul mouse-ului.
+</p>
+<h3><u>Pozitionarea documentului intr-un cadru</u></h3>
+<p>
+Atributele <b>marginheight</b> și <b>marginwidth</b> ale etichetei <b>&ltframe&gt</b> permit stabilirea distanței în pixeli dintre conținutul unui cadru și marginile verticale, respectiv orizontale ale cadrului.<br>
+Valori posibile:
+</p>
+<ul>
+<li>număr de pixeli;</li>
+<li>procent din lățimea, respectiv din inălțimea cadrului;</li>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Fer_ex9</title>
+</head>
+<frameset cols="*,*,*">
+   <frame src="p.html">
+   <frame src="p.html" marginheight="20">
+   <frame src="p.html" marginwidth="20">
+</frameset>
+<noframes>
+Dacă  vedeți acest text înseamnă ca browserul dumnevoastră nu suportă frame-uri.
+</noframes>
+</html>
+	</xmp>
+</div>
+<h3><u>Cadre interne</u></h3>
+<p>
+Un cadru intern este specificat prin intermediul blocului <b>&ltiframe&gt...&lt/iframe&gt</b>.<br>
+Un cadru intern se inserează într-o pagina Web în mod asemănător cu o imagine sau în modul în care se specifică marcajul &ltframe&gt, așa cum rezultă din următorul exemplu:
+</p>
+<ul>
+    <li>&ltiframe src="pagina1.html" height=40% width=50%&gt &lt/iframe&gt</li>
+</ul>
+<p>
+În acest caz, am specificat că doresc o fereastră de cadru intern care are 40% din inălțimea și 50% din lățimea paginii curente.<br> Atributele acceptate de eticheta &ltiframe&gt sunt în parte preluate de la etichetele &ltframe&gt şi &ltframeset&gt, cum ar fi:
+</p>
+<ul>
+<li>src, frameborder, marginheight, marginwidth, scrolling, name, noresize;</li>
+<li>sau de la eticheta <img>: vspace, hspace, align, width, height;</li>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Fer_ex10</title>
+</head>
+<body>
+<a href="p1.html" target="icad">Pagina1</a><br />
+<a href="p2.html" target="icad">Pagina2</a><br />
+<a href="p3.html" target="icad">Pagina3</a><br />
+<a href="p.html" target="icad">Home</a><br>
+<center>
+<iframe width="60%" height="50%" frameborder="1" name="icad" src="p.html"> Dacă  vedeti acest text inseamna ca browserul dumnevoastra nu suporta cadre interne. Ar fi preferabil să reveniti, folosind Netscape Navigator versiune 4.0 (/ulterioara) sau I.Explorer 4.0. (/ulterioara)
+<a href="p0.html">Pagina fara cadre interne</a>
+</iframe>
+</center>
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Tinte pentru legaturi</u></h3>
+<p>
+În mod prestabilit, la efectuarea unui clic pe o legatură nouă, pagina către care indică legătura o inlocuiește pe cea curentă, în aceeași fereastră(cadru).<br>
+Acest comportament se poate schimba în două moduri:
+</p>
+<ul>
+<li>prin plasarea în blocul &lthead&gt...&lt/head&gt a unui element &ltbase&gt care precizează, prin atributul target numele ferestrei(cadrului) în care se vor incărca toate paginile noi referite de legaturile din pagina curentă conform sintaxei:<br>
+&ltbase target="nume_ferastra/frame_de_baza"&gt</li>
+<li>prin plasarea în eticheta &lta&gt a atributului target, care precizează numele ferestrei (cadrului) în care se va incărca pagina nouă referită de legătură, conform sintaxei:<br>
+&lta href="legatura" target="nume_fereastra/frame"7gt...&lt/a&gt</li>
+</ul>
+<p>
+<h3><u>Observație:</u></h3>
+<p>
+Dacă este prezent atât un atribut target în &ltbase&gt cât și un atribut target în &lta&gt, atunci cele precizate de atributul target din &lta&gt sunt prioritare.<br>
+Numele unui cadru este stabilit prin atributul name al etichetei &ltframe&gt conform sintaxei:<br>
+</p>
+<ul>
+<li>&ltfarme name="nume_frame"&gt</li>
+</ul>
+<p>
+În exemplul următor este prezentată o pagină Web cu două cadre.<br>
+Toate legăturile din <b>cadrul 1</b> incarcă paginile în <b>cadrul 2.</b>
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Fer_ex11</title>
+</head>
+<frameset cols="20%,*">
+   <frame src="left.html">
+   <frame src="p.html" name="main">
+</frameset>
+</html>
+	</xmp>
+</div>
+<p>
+Exemplul următor este pagina <i>left.html</i>
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Fer_ex12_left</title>
+</head>
+<body>
+<a href="p1.html" target="main">Pagina1</a><br />
+<a href="p2.html" target="main">Pagina2</a><br />
+<a href="p3.html" target="main">Pagina3</a><br><br />
+<a href="p1.html" target="_blank">Pagina1 într-o fereastra noua</a><br /><br />
+<a href="p1.html" target="_self">Pagina1 în fereastra curenta</a><br /><br />
+<a href="p.html" target="main">Home</a><br />
+</body>
+</html>
+	</xmp>
+</div>
+<h3><u>Valori pentru atributul target</u></h3>
+<p>
+Atributul target al etichetei &ltframe&gt acceptă anumite valori predefinite de o valoare deosebită pentru creatorii de pagini Web.<br>
+Aceste valori sunt:
+</p>
+<ul>
+<li>_self - încărcarea noii pagini are loc în cadrul curent;</li>
+<li>_blank - încărcarea noii pagini are loc într-o fereastră nouă anonimă;</li>
+<li>_parent - încărcarea noii pagini are loc în cadrul părinte al cadrului curent dacă acesta există, altfel are loc în fereastra browser-ului curent;</li>
+<li>_top - încărcarea noii pagini are loc în fereastra browser-ului ce conține cadrul curent;</li>
+</ul>
+<hr>
+<h2>Aceasta a fost cursul online bazat pe Ferestre in HTML. Pentru a te întoarce la pagina cu celelalte teme apasă pe butonul de mai jos.</h2>
+<a href="end.html" class="back-home-button">Sfarsit</a>
+</body>
+</html>

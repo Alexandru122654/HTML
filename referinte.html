@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="temestyle.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Referinte. Referinte interne si externe</title>
+</head>
+<body>
+<h1><u>Referinte. Referinte interne si externe</u></h1>
+<p>
+Până acum am invățat să creăm documente HTML în care am introdus text și imagini. în acest capitol vom arăta cum putem accesa orice resursă Web, Internet și internă cu ajutorul referințelor (legături, link-uri, hiperlegături).<br>
+<b>Referințele au următoarele roluri:</b>
+</p>
+<ul>
+<li>Permit trecerea de la o pagină la alta de pe Web și revenire la pagina inițială prin apăsarea butonului Back al browser-ului;</li>
+<li>Permit trecerea de la o pagină la alta de pe calculatorul propriu;</li>
+<li>Permit trecerea la fișiere non web de pe Internet (ftp, telnet etc.);</li>
+<li>Permit trecerea la fișiere non HTML (.txt, .jpg, .pdf etc.); </li>
+<li>Permit vizitarea unei pagini оncepând dintr-un anumit loc, renunțând la barele de defilare;</li>
+<li>Permit trimiterea unui e-mail.</li>
+</ul>
+<ol type="1">
+<li><h3><u>Marcajul &lta&gt</u></h3></li>
+<p>
+Pentru a crea o legătură se folosește marcajul <b>&lta&gt</b> ancoră, care are sintaxa: <b>&lta atribute&gt conținut &lt>/a&gt</b><br>
+Conținutul dintre marcajele &lta&gt și &lt/a&gt poate fi text și/sau imagine, este afișat de browser sub formă de legătură (colorat și subliniat), și poate accepta comenzi de la mouse (un clic) sau de la tastatură (ENTER).<br>
+Când este deasupra unei legături, cursorul grafic ia forma unei mâini, indicându-ne astfel că browser-ul este pregătit să descarce resursa Internet de la adresa URL indicată.<br>
+Dacă un document are mai multe legături ne putem deplasa de la una la alta și cu mouse-ul și cu ajutorul tastei TAB, iar pentru a face o legătură activă se execută clic cu butonul stâng pe legătură sau se tastează ENTER.<br>    
+Atributele tag-ului <b>&lta&gt</b> sunt:
+</p>
+<ul>
+<li>href;</li>
+<li>target;</li>
+<li>title;</li>
+<li>name;</li>
+</ul>
+<br>
+<p>
+<b>Atributul href</b>
+<br>
+Atributul href (referință hipertext) este obligatoriu pentru tag-ul legătură (ca src pentru elementul &ltimg&gt), are sintaxa href="adresa URL" și are rolul de a identifica o adresă URL absolută (de pe Internet) sau relativă (locală).<br>
+In exemplul de mai jos dăm o referință către un fișier local, flori.jpg,  și către pagina Colegiului de Informatică, de pe WEB:
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head> <title>Referinte</title></head>
+<body>
+<p>Florile mele preferate<a href="images/crini.jpg">Crini</a>
+<p>Detalii despre Centrul de Excelenta in Informatica si Tehnologii Informationale
+<a href="http://ceiti.md">CEITI</a>
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+<b>Atributul target</b><br>
+<br>
+Când utilizatorul activează o legătură, browser-ul inlocuiește fereastra care conține legătura cu o nouă fereastră, specificată de adresa URL din href.<br>
+Atributul target face să se schimbe această operație implicită  și el are sintaxa target="nume", unde nume definește fereastra în care va fi incărcată noua pagină.<br>
+Numele este orice șir de caractere sau valori constante:
+</p>
+<ul>
+<li>_blank pagina va fi incărcată într-o nouă fereastră;</li>
+<li>_parent pagina va fi incărcată în fereastra părinte;</li>
+<li>_top pagina va fi incărcată în fereastra top a cadrului;</li>
+<li>_self pagina va fi incărcată în aceeași fereastră(implicită).</li>
+</ul>
+<br>
+<div class="code-container">
+	<xmp>
+<html>
+<head> <title>Referinte</title></head>
+<body>
+<p>Florile mele preferate<a href="images/crini.jpg">Crini</a>
+<p>Detalii despre Colegiul de Informatica
+<a href="http://ceiti.md" target="_blank" >CIC</a>
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+<b>Atributul  title</b><br>
+<br>
+Acest atribut are un caracter general și poate fi atașat la majoritatea elementelor HTML.<br>
+Sintaxa acestui element este: title="valoare".<br>
+Când mouse-ul este deasupra conținutului tag-ului &lta&gt conținut &lt/a&gt se transformă într-o mână și va afișa valoarea atributului title, într-o sugestie de instrument (într-un cadru).
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head> <title>Referinte</title></head>
+<body>
+<p>Florile mele preferate<a href="images/crini.jpg">Crini</a>
+<p>Detalii despre Colegiul de Informatica
+<a href="http://ceiti.md" title="Colegiul de Informatica" >CIC</a>
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+<b>Atributul name</b><br>
+<br>
+Acest atribut este utilizat pentru a defini o ancoră în interiorul unei pagini.<br>
+Sintaxa acestui atribut este: name="valoare".
+</p>
+<li><h3><u>Referințe către alte pagini Web</u></h3></li>
+<p>
+Dacă se dorește accesarea unei pagini de pe alt site, valoarea atributului <b>href</b> este o adresă URL absolută.<br>
+Amintim că o adresa URL absolută are sintaxa: <b>protocol /nume-calculator/cale/fișier</b> unde protocol poate fi, de exemplu, <b>http.</b><br>
+<b>Exemplu:</b>
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head></head>
+<body>
+Pentru mai multe informatii despre <br>
+invatamint vizitati site-ul Ministerul Educatiei
+<a href="http://www.edu.md"> ME</a>
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+Același rezultat obținem dacă scriem și numele fișierului index(default) care se incarcă <b>&lta href="http://www.edu.md/index.php"&gt</b> ME &lt/a&gt<br>
+Dacă se dorește să se viziteze altă pagină a respectivului site, se scrie numele fișierului <b>.php(.html)</b>, respectiv.
+</p>
+<li><h3><u>Referinte cu imagini</u></h3></li>
+<p>
+Așa cum am specificat mai sus, o legătură poate fi creată și cu ajutorul unei imagini.<br>
+Ca și în cazul în care conținutul unei legături este un text, și în cazul în care conținutul este o imagine, accesarea paginii se face cu un clic, sau un ENTER pe imagine.<br>
+<br>
+<b>Exemplu:</b>
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+ 
+<head> <title> Legaturi cu imagini </title> </head>
+<body>
+Colegiul de Informatica din Chisinau
+<a href="http://ceiti.md">
+<img src= "http://ceiti.md/galerie/content/Exteriorul colegiului/IMG_1631.jpg">
+</a>
+</body>
+</html>
+	</xmp>
+</div>
+<p>
+Un link poate fi format și din text și din imagine adică:
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head> <title> Legaturi cu imagini </title> </head>
+<body>
+Colegiul de Informatica din Chisinau
+<a href="http://ceiti.md">CIC
+<img src= "http://ceiti.md/galerie/content/Exteriorul colegiului/IMG_1631.jpg" width=70 height=70>
+</a>
+</body>
+</html>
+	</xmp>
+</div>
+<li><h3><u>Referințe cu adrese URL relative</u></h3></li>
+<p>
+Adresele URL relative sunt acele adrese care fac referire la pagini de pe calculatorul propriu, indicând cale/nume-fișier, fără a fi prefixate de protocol și nume calculator.<br>
+In adresele relative putem folosi caracterele ../ – pentru a urca un nivel în structura de directoare(către directorul părinte).<br>
+Se cunoaște faptul că un site poate să aibă paginile (fișierele) organizate într-o structură arborescentă de directoare.<br>
+Să presupunem că avem următoarea structura arborescentă:
+</p>
+<div align="middle">
+	<img src="schema1.png">
+</div>
+<p>
+Conform structurei arboriscente date din pagina pag6.html din mapa M5 se pot accesa celelalte pagini, utilizând următoarele referințe:
+</p>
+<ul>
+<li>../../pag1.html</li>
+<li>../../M1/pag2.html</li>
+<li>../../M3/M6/pag7.html</li>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head> <title> Referinte relative </title> </head>
+<body>
+Pagina7
+<a href="../../M4/pag5.html"> Referinta catre pagina pag5.html  </a>
+</body>
+</html>
+	</xmp>
+</div>
+<div class="code-container">
+	<xmp>
+<html>
+<head> <title> Referinte relative </title> </head>
+<body>
+Pagina5
+<a href="../M3/M6/pag7.html"> Referinta catre pagina pag7.html  </a>
+</body>
+</html>
+	</xmp>
+</div>
+<li><h3><u>Referințe către informații non Web</u></h3></li>
+<p>
+Se pot face referințe și la adrese URL absolute de pe Internet, care nu sunt resurse Web.<br>
+In adresele URL absolute se inlocuiește protocolul <b>http</b> cu alte protocoale non Web (ftp, telnet, gopher etc.).<br>
+<br>
+<b>Exemplu:</b>
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head></head>
+<body>
+<ul>
+<li><a href="ftp://gatekepper.dec.com" >Vizitati locatia</a></li>
+<li><a href="ftp://ftp.arsc.edu"> Educatie</a> </li>
+<li><a href="telnet://well.com" > Whole Earth</a></li>
+<li><a href="gopher://gopher.loc.gov"> GongresGopher</a></li>
+</ul>
+</body>
+</html> </p>
+	</xmp>
+</div>
+<li><h3><u>.Referințe către fișiere non HTML</u></h3></li>
+<p>
+Se pot stabili legături către orice tip de fișiere, nu numai html, ca de exemplu .pdf, .txt, .gif, .rar, .zip, etc. în aceste condiții se intâlnesc două situații:
+</p>
+<ul>
+<li>Browser-ul nu poate lucra cu fișierul intâlnit și atunci incearcă să-l descarce, executând operația download.</li>
+<li>Browser-ul cunoaște tipul de fișier și acesta va fi deschis în fereastra sa.</li>
+</ul>
+<p><b>Exemplu</b></p>
+<div class="code-container">
+	<xmp>
+<html>
+<head></head>
+<body>
+<a href="pag_2.pdf"> Fisier PDF</a> <br>
+<a href="doc.txt">Fisier TXT </a> <br>
+<a href="../files/tabel_culori.rar"> Fisier RAR </a> <br>
+<a href="http://ceiti.md/galerie/content/Exteriorul colegiului/IMG_1631.jpg">Fisier JPG </a>
+</body>
+</html></p>
+	</xmp>
+</div>
+<li><h3><u>Referințe interne în cadrul unei pagini</u></h3></li>
+<p>
+În această secțiune vom defini ancore (ținte) într-o pagină, adăugarea legăturilor către aceste ținte, precum și legături către ținte din documente externe.<br>
+Dacă documentele HTML sunt prea lungi și sunt greu de parcurs, pentru a evita parcurgerea cu bara de defilare, se definesc ancore.<br>Ancorele ne permit să ne deplasăm rapid intr-un loc din document.<br>
+Ancora este un identificator al inceputului unui element dintr-o pagină web.<br>
+Dacă au fost definite ancore într-o pagină, se pot crea legături către respectivele ancore.<br>
+Ancorele se pot defini în două moduri:
+</p>
+<ul>
+<li>utilizând orice element HTML, inclusiv elementul &lta&gt cu atributul id, de exemplu: &ltp id="valoare_id"&gt sau &lta id="valoare_id"&gt &lt/a&gt</li>
+<li>utilizând tag-ul &lta&gt cu atributul name, de exemplu: &lta name="valoare_nume"&gt &lt/a&gt</li>
+</ul>
+<p>
+Pentru a crea o legătură la o ancoră se folosește tag-ul <b>&lta&gt...&lt/a&gt</b> cu atributul href, care are ca valoare o referință de ancoră, precedată de simbolul “#”, astfel:
+</p>
+<ul>
+<li># valoare_nume</li>
+<li># valoare_id</li>
+</ul>
+<p>
+Fișierul trebuie să fie suficient de mare, astfel оncât secvența care conține o ancoră să nu fie vizibilă în momentul trimiterii către ea.<br>
+Ca exemplu să considerăm agenda grupei I-942:
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head>
+<title>Agenda grupei</title>
+</head>
+<body>
+<h1 align="center"> Agenda grupei I-942<br />
+<p>
+<a href="#a-c"> [A-C] </a>
+<a href="#d-h"> [D-H] </a>
+<a href="#i-l"> [I-L] </a>
+<a href="#m-n"> [M-N] </a>
+<a href="#o-s"> [O-S] </a>
+<a href="#t-w"> [T-W] </a>
+</h1>
+<br />
+<hr size="4" width="100%" align="center" color="#666666">
+<br />
+<pre>
+<h1>
+<p id="a-c"> [A-C] </p>
+1.Bogdan Constantin
+2.Budu Tudor
+3.Buzu Gheorghe
+4.Casian Olea
+5.Casparov Pavel
+6.Cebotari Ecaterina
+7.Cibuc Nicolae
+8.Ciusca Cristian
+9.Coslet Vladislav
+10.Cotărău Alina
+11. ...
+<p id="d-h"> [D-H] </p>
+1.Dabija Viorel
+2.Gabura Ruslan
+3.Gorobet Lilian
+4. ...
+<p id="i-l"> [I-L] </p>
+1.Lungu Inga
+2. ...
+<p id="m-n"> [M-N] </p></p>
+1.Melestean Alexandru
+2.Mititelu Dumitru
+3. ...
+<p id="o-s"> [O-S] </p>
+1.Podolean Ion
+2.Popovici Victor
+3.Puzur Gheorghe
+4.Savin Victor
+5.Scutelnic Valeria
+6.Smolenschi Mihai
+7.Stefanica Victor
+8.Strelciuc Victoria
+9. ...
+<p id="t-w"> [T-W] </p>
+1.Todirascu Mihaela
+2.Toma Cristian
+3.Vasiloi Alexandru
+4. ...
+</body>
+</html>
+	</xmp>
+</div>
+<li><h3><u>Trimiterea automata a unui e-mail</u></h3></li>
+<p>
+Dacă dorim să trimitem un e-mail dintr-o pagină, se creează o legătură la o adresă e-mail. Legătura va avea atributul href a cărui valoare este mailto (protocol pentru poștă), urmată de”:” și de o adresă de e-mail validă, de exemplu:<br>
+&lta href="mailto:cio3banu@yahoo.com"&gt Puteti să-mi scrieti &lt/a&gt<br>
+Se poate folosi elementul &ltadress&gt de formatare logică, care are rolul de a evidenția o adresă (mesajul se va scrie la început de linie), așa cum reiese din exemplu de mai jos. Sintaxa elementului &ltadress&gt este:<br>
+&ltadress&gt &lta href="mailto:cio3banu@yahoo.com"&gt Puteti să-mi scrieti &lt/a&gt &lt/adress&gt <br>
+Când se execută clic pe o legătură e-mail, se va deschide o aplicație e-mail care are, în câmpul To, adresa din legătură și care permite să introducem mesajul.<br>
+Se poate trece și un subiect, care va fi despărțit de adresă prin “?”, precum și un text în interiorul mesajului (de forma body=text) și care se va separa de subiect prin caracterul “&”, ca în exemplul de mai jos:
+</p>
+<div class="code-container">
+	<xmp>
+<html>
+<head></head>
+<body>
+<adress>
+<a href="mailto:cio3banu@yahoo.com"> Puteți să-mi scrieti</a> 
+</adress> 
+</body>
+</html>
+	</xmp>
+</div>
+<li><h3><u>Culorile referintelor</u></h3></li>
+<p>
+O referință poate fi în una din stările:
+</p>
+<ul>
+<li>activă</li>
+<li>vizitată</li>
+<li>nevizitată</li>
+</ul>
+<p>
+În funcție de starea în care se află, o legătură are o anumită culoare și anume:
+</p>
+<ul>
+<li>Starea activă are culoarea implicită roșu (#FF0000). Culoarea se poate schimba cu atributul alink=”culoare” al elementului < body></li>
+<li>Starea vizitată are culoarea implicită purple (#800080). Culoarea se poate schimba cu atributul vlink=”culoare” al elementului < body></li>
+<li>Starea nevizitată are culoarea implicită albastru (#0000FF). Culoarea se poate schimba cu atributul link=”culoare” al elementului < body></li>
+</ul>
+<div class="code-container">
+	<xmp>
+<html>
+<head></head>
+<body alink="green" vlink="red" link="blue">
+<ul>
+<li><a href="http://ceiti.md">CIC</a>
+<li><a href="http://cfbc.md">CFBC</a>
+<li><a href="http://ccc.md">CCC</a>
+</ul>
+</body>
+</html>
+	</xmp>
+</div>
+</ol>
+<hr>
+<h2>Aceasta a fost cursul online bazat pe Referintele interne si externe in HTML. Pentru a te întoarce la pagina cu celelalte teme apasă pe butonul de mai jos.</h2>
+<a href="teme.html" class="back-home-button">Înapoi la pagina cu teme</a>
+</body>
+</html>

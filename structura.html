@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="temestyle.css">
+	<title>Structura documentului HTML</title>
+</head>
+<body class="fade-in-element">
+	<h1><u>Structura documentului HTML: </u></h1>
+	<p>Orice document HTML începe cu notația &lthtml&gt și se termină cu notația &lt/html&gt. Aceste "chestii" se numesc în literatura de specialitate "TAG-uri".Prin convenție, toate informațiile HTML încep cu o paranteză unghiulară deschisă " < " și se termină cu o paranteză unghiulară închisă " > ".<br>
+Tag-urile între aceste paranteze transmit comenzi către browser pentru a afișa pagina într-un anumit mod. Unele blocuri prezintă delimitator de sfârșit de bloc, în timp ce pentru alte blocuri acest delimitator este opțional sau chiar interzis.<br>
+Între cele doua marcaje &lthtml&gt și &lt/html&gt vom introduce doua secțiuni:<br>
+- sectiunea de antet &lthead&gt...&lt/head&gt și - corpul documentului &ltbody&gt...&lt/body&gt. Blocul &ltbody&gt...&lt/body&gt cuprinde conținutul propriu-zis al paginii HTML, adică ceea ce va fi afișat în fereastra browser-ului.</p>
+
+<img height="300" width="350" src="structura.png">
+<p>O eticheta poate fi scrisă atât cu litere mici, cât și cu litere mari.<br>
+Adică &lthtml&gt = &ltHTML&gt = &ltHtml&gt. Caracterele "spațiu" și "CR/LF" ce apar între etichete sunt ignorate de către browser.<br>
+Deci un prim document HTML ar fi ceva de genul asta:</p><br>
+<div class="code-container">
+<xmp>
+<html>
+<head> </head>
+<body>
+</body>
+</html>
+</xmp>
+</div>
+<p>Așa arată primul document HTML. Copiați-l folosind Copy/Paste într-un fișier nou și salvați-l ca PRIM.HTM sau PRIM.HTML. Apoi porniți Internet Explorer sau Google Crome, dați CTRL-O și introduceți calea spre fișier. Dați OK și ... nimic.
+Să nu disperam ... vom adăuga primele elemente la pagina noastră. în primul rând, titlul unei pagini se obține inserând în secțiunea &lthead&gt...&lt/head&gt a următoarei linii:<br>
+&lttitle&gtAceasta este prima mea pagina de Web&lt/title&gt<br>
+în plus, în secțiunea &ltbody&gt...&lt/body&gt putem scrie texte cît dorim. Dacă nu întâlnim nici un marcaj < sau > atunci interpretorul HTML le va lua ca texte simple și le va afișa pe ecran. să vedem o nou[] versiune a paginii noastre:</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title>Aceasta este prima mea pagina de Web</title>
+</head>
+<body>
+Bine ati venit în pagina mea de Web!
+</body>
+</html>
+</xmp>	
+</div>
+<p>Conținutul blocului &lttitle&gt...&lt/title&gt va apărea în bara de titlu a ferestrei browser-ului.<br>
+Dacă acest bloc lipsește într-o pagină HTML, atunci în bara de titlu a ferestrei browser-ului va apărea numele fișierului.<br>
+Dacă introducem mai multe linii într-o pagina browser-ul va afișa într-un singur rând, intrucât caracterele " CR/LF " sunt ignorate de browser. Trecerea pe o linie noua se face la o comanda explicită, care trebuie să apară în pagina html.<br>
+Această comandă este marcajul &ltbr&gt ( de la " line break " - intrerupere de linie ).<br>
+Folosind codul de mai jos veți observa unele modificări precum titlul păginii.</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title>Titlul paginii</title>
+</head>
+<body>
+Bine ati venit în &ltbr&gt pagina mea de Web!
+</body>
+</html>
+</xmp>
+</div>
+<h3><u>Blocuri preformatate</u></h3>
+<p>
+	Pentru ca browser-ul să interpreteze corect caracterele " spațiu ", " tab " și " CR/LF " ce apar în cadrul unui text, acest text trebuie inclus într-un bloc &ltpre&gt...&lt/pre&gt.
+</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title>Bloc preformatat </title>
+</head>
+<body>
+<pre>
+    Prima linie
+        A doua linie
+            A treia  linie
+</pre>
+</body>
+</html>
+</xmp>
+</div>
+<h3><u>Culoare de fond</u></h3>
+<p>O culoare poate fi precizată în două moduri:<br>
+Printr-un nume de culoare. Sunt disponibile cel puțin 16 nume de culori: aqua, black, fuchsia, gray, green lime, maroon, navy, olive, purple, red, silver, teal, white și yellow.<br>
+Prin construcția " #rrggbb " unde r (red), g (green), sau b (blue) sunt cifre hexazecimale și pot lua valorile: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, A, b, B, c, C, d, D, e, E, f, F; se pot defini astfel 65536 de culori.<br>
+Culoarea unei pagini se precizează prin intermediul unui atribut al etichetei &ltbody&gt.<br>
+Culoarea fondului paginii Web se stabilește cu atributul bgcolor al etichetei &ltbody&gt, de exemplu: &ltbody bgcolor = culoare&gt.<br>
+Următorul exemplu realizează o pagină cu fondul de culoare gri:
+</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title>Culoare de fond </title>
+</head>
+<body  bgcolor="gray">
+O pagina Web cu fondul GRI!
+</body>
+</html>
+</xmp>
+</div>
+<h3><u>Culoarea textului</u></h3>
+<p>
+Acest lucru se face prin intermediul atributului text al etichetei &ltbody&gt după sintaxa &ltbody text=culoare&gt.<br>
+În următorul exemplu textul are culoarea roșie.
+</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title>culoare textului </title>
+</head>
+<body  text="red">
+Un text de culoare rosie.
+</body>
+</html>
+</xmp>
+</div>
+<p>
+O eticheta poate avea mai multe atribute. De exemplu, o etichetă cu trei atribute arată astfel:<Br>
+&lteticheta atribut1 = valoare1 atribut2 = valoare2 atribut3 = valoare3&gt.<br>
+Următorul exemplu prezintă o pagină cu fondul de culoare albastră și textul de culoare galbenă.:
+</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title>atribute multiple </title>
+</head>
+<body  bgcolor="blue" text="yellow">
+Fond de culoare albastra și text de culoare galbena.
+</body>
+</html>
+</xmp>
+</div>
+<p>
+Textul afișat este caracterizat de următoarele atribute: Mărime ( size), Culoare ( color ), Font (style).<br>
+Acestea sunt atribute ale etichetei &ltbasefont&gt.Este o eticheta singulară (fără delimitator de sfirșit de bloc).<br>
+&ltbasefont size = număr color = culoare style = font&gt
+unde:
+număr - poate fi 1, 2, 3, 4, 5, 6 sau 7; ( 1 pentru fontul cel mai mic și 7 pentru fontul cel mai mare);<br>
+culoare - este o culoare precizată prin nume sau printr-o construcție RGB;<br>
+font - poate fi un font generic ca " serif ", " san serif ", " cursive ", " monospace ", "fantasy " sau un font specific instalat pe calculatorul clientului, ca " Times New Roman ", " Helvetica " sau " Arial ".Se acceptă ca valoare și o listă de fonturi separate prin virgula, de exemplu:<br>
+" Times New Roman, serif, monospace ".<br>
+Domeniul de valabilitate al caracteristicilor precizate de această etichetă se întinde de la locul în care apare eticheta până la sfârșitul paginii sau până la următoarea etichetă &ltbasefont&gt.<br>
+Dacă acest atribut lipsește atunci textul din pagina Web are atribute prestabilite sau atribute precizate de browser-ul utilizat.<br>
+Atributele prestabilite sunt: size = 3, color = black, și style = " Times New Roman ".<br>
+Poziționarea conținutului paginii Web față de marginile ferestrei browser-ului se poate face cu ajutorul a două atribute ale etichetei &ltbody&gt:<br>
+<ul>
+<li>leftmargin ( stabilește distanta dintre marginea stânga a ferestrei browser-ului și marginea stângă a conținutului paginii );</li>
+<li>topmargin ( stabilește distanta dintre marginea de sus a ferestrei browser-ului și marginea de sus a conținutului paginii );</li>
+</ul>
+</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title>Stiluri pentru blocuri de text </title>
+</head>
+<body>
+<b>Text scris cu caractere ingrosate.</b><br>
+<big>Text cu caractere marite cu o unitate <big>mai mare<big>și mai mare<big>și mai mare.</big></big></big></big><br>
+<small>Textul este scris cu caractere micsorate cu o unitate <small>mai mic.</small></small><br>
+<i>Text scris cu caractere italice.</i><br>
+în aceasta linie <sup>sus</sup> este superscript iar <sub>jos</sub> este subscirpt.<br>
+<strike>Aceasta  linie este în intregime sectionata de o linie orizontala.</strike><br>
+în aceasta linie urmatorul cuvant este <u>subliniat</u>, iar cuvantul <s>strike</s> sectionat.
+</body>
+</html>
+</xmp>
+</div>
+<h3><u>Stiluri fizice și logice</u></h3>
+<p>
+Am prezentat deja 8 stiluri de scriere a caracterelor unui bloc de text, numite și stiluri fizice intrucât nu s-a acordat nici o atenție semnificației informației conținute de aceste blocuri.<br>
+În continuare sunt prezentate stilurile utilizate la formatarea unui bloc.<br>
+Aceste stiluri țin cont de semnificația pe care o are blocul în cadrul paginii Web.<br>
+Pentru a pune în evidență ( prin stilul cursiv ) fragmente de text se utilizează etichetele:<br></p>
+<ul>
+<li>&ltcite&gt...&lt/cite&gt ( " cite " inseamna citat);</li>
+<li>&ltem&gt...&lt/em&gt (em vine de la " emphasize " = a evidentia).</li>
+</ul>
+<p>
+în locul lor se poate utiliza eticheta echivalenta &lti&gt...&lt/i&gt.
+Urmatoarele etichete au efecte similare. Ele permit scrierea fragmentului de text cu caractere monospațiate (de tipul celor folosite de o mașină de scris):</p>
+<ul>
+<li>&ltcode&gt...&lt/code&gt ( " code " inseamna cod sau sursă);</li>
+<li>&ltkbd&gt...&lt/kbd&gt ( kbd vine de la " keyboard " = tastatura);</li>
+<li>&lttt&gt...&lt/tt&gt ( tt vine de la " teletype " = teleprinter).</li></ul>
+<p>
+Eticheta de tip bloc &ltblink&gt...&lt/blink&gt delimitează fragmente de text clipitoare. Aceasta eticheta funcționează numai în browser-ul Netscape Communicator.</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title>Blocuri de caractere monospatiate și clipitoare </title>
+</head>
+<body>
+Aceasta linie este formata din text normal.<br>
+Codul functiei f(x,y) este: <code> Function f(x,y) {return  x+y;}</code><br>
+Tastati urmatoarea comanda comanda DOS:
+<kbd>  copy c:\windows\* c:\temp</kbd><br>
+<tt>Asa  scrie un teleprinter</tt><br>
+Acest cuvant clipeste<blink>Blink</blink>
+</body>
+</html>
+</xmp>
+</div>
+<p>
+Exemplul următor ilustrează că etichetele pot fi imbricate.
+Un fragment de text poate fi scris cu aldine și cursive în același timp.
+Pentru un fragment de text se pot folosi simultan stilurile subliniat, exponent, mărit și cursiv.
+</p>
+<div class="code-container">
+<xmp>
+<html>
+<head>
+<title>Imbricarea etichetelor </title>
+</head>
+<body>
+Această linie este formată din text normal.<br>
+Normal<b>îngroșat<i>îngroșat și italic</i>ingrosat</b>.<br> 
+Normal <u>subliniat <b> subliniat și îngroșat <big> subliniat, îngroșat și mărit.<br>
+<i>Subliniat, îngroșat, mărit și italic.</i></big></b></u>
+</body>
+</html>
+</xmp>
+</div>
+<p>
+Blocul &ltq&gt...&lt/q&gt permite inserarea in-line a citatelor. Browser-ul afișează citatele în ghilimele.
+" q " vine de la " in-line quotation " (citate inserate in-line).<br>
+Și blocurile " q " pot fi imbricate.<Br>
+Exemplu(de sine stătător).<Br>
+Simbolurile "<" și ">" sunt percepute de sistemele browser ca începuturi și sfârșituri de HTML-taguri. Apare întrebarea, cum să reprezentăm aceste simboluri pe ecran?<br>
+În limbajul HTML aceasta se poate realiza cu ajutorul &-consecutivităților (ele se mai numesc obiecte simbolice sau escape-consecutivități).<br>
+Există mai multe consecutivități de acest tip:<br>
+"<" - & lt;<br>
+">" - & gt;<br>
+"&" (ampersand) & amp; <br>
+Ghilimelele(") se codifică - & quot;
+</p>
+<h4><u>Comentarii</u></h4>
+<p>
+Sistemele browser ignoră reproducerea oricărui text situat între <b>&lt!-- și --&gt.</b> Este o opțiune specială pentru introducerea în textul documentului HTML a unor comentarii, ce nu vor fi afișate pe ecran.<br>
+<b>&lt!--Acesta e un comentariu --&gt</b>
+</p>
+<hr>
+<h2>Aceasta a fost cursul online bazat pe structura HTML. Pentru a te întoarce la pagina cu celelalte teme apasă pe butonul de mai jos.</h2>
+<a href="teme.html" class="back-home-button">Înapoi la pagina cu teme</a>
+</body>
+</html>
